@@ -1,8 +1,8 @@
 package com.epam.igorpystovit.DAOPattern;
 
-import com.epam.igorpystovit.metadata.ColumnMetaData;
-import com.epam.igorpystovit.metadata.ForeignKeyMetaData;
-import com.epam.igorpystovit.metadata.TableMetaData;
+import com.epam.igorpystovit.model.metadata.ColumnMetaData;
+import com.epam.igorpystovit.model.metadata.ForeignKeyMetaData;
+import com.epam.igorpystovit.model.metadata.TableMetaData;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;

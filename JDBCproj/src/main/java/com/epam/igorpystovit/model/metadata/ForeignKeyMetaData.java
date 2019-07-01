@@ -1,4 +1,4 @@
-package com.epam.igorpystovit.metadata;
+package com.epam.igorpystovit.model.metadata;
 
 public class ForeignKeyMetaData {
     private String tableName;

@@ -1,4 +1,4 @@
-package com.epam.igorpystovit.metadata;
+package com.epam.igorpystovit.model.metadata;
 
 import java.util.ArrayList;
 import java.util.List;

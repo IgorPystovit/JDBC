@@ -1,4 +1,4 @@
-package com.epam.igorpystovit.Annotations;
+package com.epam.igorpystovit.model.Annotations;
 
 import java.lang.annotation.*;
 
