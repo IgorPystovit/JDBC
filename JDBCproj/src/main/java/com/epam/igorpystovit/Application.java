@@ -1,16 +1,14 @@
 package com.epam.igorpystovit;
 
-import com.epam.igorpystovit.DAOPattern.MetaDataDAO;
+import com.epam.igorpystovit.DAOPattern.CompaniesDAOImpl;
+import com.epam.igorpystovit.DAOPattern.PlanesDAOImpl;
 import com.epam.igorpystovit.DAOPattern.TownsDAOImpl;
-import com.epam.igorpystovit.connectionmanager.ConnectionManager;
+import com.epam.igorpystovit.entities.CompaniesEntity;
+import com.epam.igorpystovit.entities.PlaneType;
+import com.epam.igorpystovit.entities.PlanesEntity;
 import com.epam.igorpystovit.entities.TownsEntity;
-import com.epam.igorpystovit.model.metadata.TableMetaData;
 
 import java.sql.SQLException;
-import java.sql.Time;
-import java.text.SimpleDateFormat;
-import java.time.LocalTime;
-import java.util.Date;
 import java.util.List;
 
 public class Application {
@@ -25,13 +23,18 @@ public class Application {
 //        } catch (Exception e){
 //            System.out.println(e);
 //        }
+
+        PlanesDAOImpl planesDAO = new PlanesDAOImpl();
         TownsDAOImpl townsDAO = new TownsDAOImpl();
         try{
-            System.out.println(townsDAO.createTown(4,"Some town"));
-            System.out.println(townsDAO.getTownById(4));
-        } catch (SQLException e){
+            planesDAO.delete(2);
+            List<PlanesEntity> planes = planesDAO.getAll();
+            for (PlanesEntity plane : planes){
+                System.out.println(plane);
+            }
+
+        } catch (SQLException|NoSuchDataException e){
             e.printStackTrace();
         }
-
     }
 }

@@ -12,6 +12,12 @@ public class TownsEntity {
     @Column(name = "name", length = 200)
     String townName;
 
+    public TownsEntity(){}
+    public TownsEntity(int townId,String townName){
+        this.townId = townId;
+        this.townName = townName;
+    }
+
     public int getTownId() {
         return townId;
     }

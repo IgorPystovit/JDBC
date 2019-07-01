@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <properties>
+        <property name="APP_LOG_PATH">logs</property>
+        <property name="LOG_PATTERN">%-5p | %d{dd-MM-yyyy} | %d{HH:mm:ss} | %c -> '%m' %xEx{short} %n</property>
+        <property name="FILE_PATTERN">archive/runtime-%d{dd-MM-yyyy-|-hh-mm-ss}.log</property>
+    </properties>
+
+    <appenders>
+        <console name="consoleAppender" follow="true" target="SYSTEM_OUT">
+            <patternlayout pattern="${LOG_PATTERN}"/>
+        </console>
+
+        <rollingfile name="errorLog" fileName="${APP_LOG_PATH}/errorLog.log" filePattern="${APP_LOG_PATH}/${FILE_PATTERN]">
+            <patternlayout pattern="${LOG_PATTERN}"/>
+            <levelrangefilter minLevel="WARN" maxLevel="FATAL" onMatch="DENY" onMismatch="ACCEPT"/>
+            <policies>
+                <sizebasedtriggeringpolicy size="100KB"/>
+            </policies>
+        </rollingfile>
+
+        <rollingfile name="infoLog" fileName="${APP_LOG_PATH}/infoLog.log" filePattern="${APP_LOG_PATH}/${FILE_PATTERN]">
+            <patternlayout pattern="${LOG_PATTERN}"/>
+            <levelrangefilter minLevel="INFO" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <policies>
+                <sizebasedtriggeringpolicy size="100KB"/>
+            </policies>
+        </rollingfile>
+    </appenders>
+
+    <loggers>
+        <logger name="com.epam.igorpystovit" additivity="false" level="all">
+            <appenderref ref="consoleAppender" level="all"/>
+            <appenderref ref="errorLog" level="warn"/>
+            <appenderref ref="infoLog" level="debug"/>
+        </logger>
+    </loggers>
+</configuration>

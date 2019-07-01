@@ -1,0 +1,5 @@
+INFO  | 01-07-2019 | 14:31:56 | com.epam.igorpystovit.Application -> 'infoLog'  
+INFO  | 01-07-2019 | 14:32:26 | com.epam.igorpystovit.Application -> 'infoLog'  
+DEBUG | 01-07-2019 | 14:32:26 | com.epam.igorpystovit.Application -> 'debugLog'  
+INFO  | 01-07-2019 | 19:39:08 | com.epam.igorpystovit.DAOPattern.daointerface.GeneralDAO -> 'There is no data with such id'  
+INFO  | 01-07-2019 | 19:40:18 | com.epam.igorpystovit.DAOPattern.daointerface.GeneralDAO -> 'There is no data with such idd'  

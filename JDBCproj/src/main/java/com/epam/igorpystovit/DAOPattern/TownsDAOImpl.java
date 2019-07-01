@@ -1,6 +1,7 @@
 package com.epam.igorpystovit.DAOPattern;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.TownsDAO;
+import com.epam.igorpystovit.NoSuchDataException;
 import com.epam.igorpystovit.Transformer;
 import com.epam.igorpystovit.connectionmanager.ConnectionManager;
 import com.epam.igorpystovit.entities.TownsEntity;
@@ -9,46 +10,104 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TownsDAOImpl  {
+public class TownsDAOImpl implements TownsDAO{
     private final String FIND_ALL = "select * from Towns";
     private final String GET_BY_ID = "select * from Towns where id = ?";
-    private final String INSERT = "insert Towns values(?,?)";
+    private final String INSERT = "insert Towns(id,name) values(?,?)";
     private final String UPDATE = "update Towns set name = ? where id = ?";
-    private final Connection dbConnection;
-    private Transformer transformer = new Transformer(TownsEntity.class);
+    private final String DELETE = "delete from Towns where id = ?";
+    private final Connection DBCONNECTION;
+    private Transformer<TownsEntity> transformer = new Transformer<>(TownsEntity.class);
+
     public TownsDAOImpl(){
-        dbConnection = ConnectionManager.getConnection();
+        DBCONNECTION = ConnectionManager.getConnection();
     }
 
-    public TownsEntity getTownById(int id) throws SQLException{
+    @Override
+    public TownsEntity getById(Integer id) throws SQLException,NoSuchDataException{
         TownsEntity townsEntity = null;
-        PreparedStatement preparedStatement = dbConnection.prepareStatement(GET_BY_ID);
+        PreparedStatement preparedStatement = DBCONNECTION.prepareStatement(GET_BY_ID);
         preparedStatement.setInt(1,id);
         ResultSet townResultSet = preparedStatement.executeQuery();
         while (townResultSet.next()){
             townsEntity = (TownsEntity) transformer.transformFromResultSet(townResultSet);
         }
+        if (townsEntity == null){
+            throw new NoSuchDataException();
+        }
         return townsEntity;
     }
 
-    public boolean createTown(int id,String townName) throws SQLException{
-        boolean modified = false;
-        TownsEntity townsEntity = getTownById(id);
-        if (townsEntity == null){
-            PreparedStatement preparedStatement = dbConnection.prepareStatement(INSERT);
-            preparedStatement.setInt(1,id);
-            preparedStatement.setString(2,townName);
-            modified = preparedStatement.execute();
+
+    @Override
+    public void create(TownsEntity townsEntity) throws SQLException{
+        try{
+            checkIfPresent(townsEntity.getTownId());
+        } catch (NoSuchDataException e){
+            PreparedStatement preparedStatement = DBCONNECTION.prepareStatement(INSERT);
+            preparedStatement.setInt(1,townsEntity.getTownId());
+            preparedStatement.setString(2,townsEntity.getTownName());
+            preparedStatement.execute();
+            return;
         }
-        else{
-            System.out.println("You are trying to insert duplicate primary key");
-        }
-        return modified;
+        logger.error("You are trying to insert duplicate primary key");
     }
 
-    public List<TownsEntity> getAllTowns() throws SQLException {
+    public void create(Integer id, String townName) throws SQLException{
+        try{
+            checkIfPresent(id);
+        } catch (NoSuchDataException e){
+            PreparedStatement preparedStatement = DBCONNECTION.prepareStatement(INSERT);
+            preparedStatement.setInt(1,id);
+            preparedStatement.setString(2,townName);
+            preparedStatement.execute();
+            return;
+        }
+        logger.error("You are trying to insert duplicate primary key");
+    }
+
+    @Override
+    public void update(TownsEntity townsEntity) throws SQLException,NoSuchDataException{
+        try {
+            checkIfPresent(townsEntity.getTownId());
+            PreparedStatement preparedStatement = DBCONNECTION.prepareStatement(UPDATE);
+            preparedStatement.setString(1,townsEntity.getTownName());
+            preparedStatement.setInt(2,townsEntity.getTownId());
+        } catch (NoSuchDataException e){
+            System.out.println("No data with such id stored on the table");
+            throw e;
+        }
+    }
+
+    public void update(int updateTownId, String townName) throws SQLException,NoSuchDataException{
+        try {
+            checkIfPresent(updateTownId);
+            PreparedStatement preparedStatement = DBCONNECTION.prepareStatement(UPDATE);
+            preparedStatement.setString(1,townName);
+            preparedStatement.setInt(2, updateTownId);
+        } catch (NoSuchDataException e){
+            System.out.println("No data with such updateTownId stored on the table");
+            throw e;
+        }
+    }
+
+    @Override
+    public void delete(Integer id) throws NoSuchDataException,SQLException{
+        try{
+            checkIfPresent(id);
+            PreparedStatement deleteStatement = DBCONNECTION.prepareStatement(DELETE);
+            deleteStatement.setInt(1,id);
+            deleteStatement.execute();
+        } catch (NoSuchDataException e){
+            System.out.println("No data with such id stored on the table");
+            throw e;
+        }
+    }
+
+    @Override
+    public List<TownsEntity> getAll() throws SQLException {
         List<TownsEntity> townsEntities = new ArrayList<>();
-        Statement statement = dbConnection.createStatement();
+        Statement statement = DBCONNECTION.createStatement();
         ResultSet resultSet = statement.executeQuery(FIND_ALL);
         while (resultSet.next()){
             townsEntities.add((TownsEntity) transformer.transformFromResultSet(resultSet));

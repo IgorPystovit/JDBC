@@ -1,5 +1,6 @@
 package com.epam.igorpystovit;
 
+import com.epam.igorpystovit.entities.PlaneType;
 import com.epam.igorpystovit.model.Annotations.Column;
 import com.epam.igorpystovit.model.Annotations.Table;
 
@@ -12,8 +13,8 @@ import java.time.LocalTime;
 public class Transformer<T>  {
     private final Class<T> transformClass;
 
-    public Transformer(Class<T> transfromClass){
-        this.transformClass = transfromClass;
+    public Transformer(Class<T> transformClass){
+        this.transformClass = transformClass;
     }
 
     public Object transformFromResultSet(ResultSet resultSet){
@@ -38,6 +39,9 @@ public class Transformer<T>  {
                         }
                         else if (fieldType.equals(Date.class)){
                             field.set(entity,resultSet.getDate(fieldName));
+                        }
+                        else if (fieldType.equals(PlaneType.class)){
+                            field.set(entity,PlaneType.valueOf(resultSet.getString(fieldName).toUpperCase()));
                         }
                     }
                 }

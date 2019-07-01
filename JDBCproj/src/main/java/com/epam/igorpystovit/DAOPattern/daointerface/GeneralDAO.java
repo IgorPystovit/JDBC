@@ -1,16 +1,26 @@
 package com.epam.igorpystovit.DAOPattern.daointerface;
 
+import com.epam.igorpystovit.NoSuchDataException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.sql.SQLException;
 import java.util.List;
 
 public interface GeneralDAO<T, ID> {
-    List<T> findAll() throws SQLException;
+    Logger logger = LogManager.getLogger(GeneralDAO.class.getName());
 
-    T findById(ID id) throws SQLException;
+    List<T> getAll() throws SQLException;
 
-    int create(T entity) throws SQLException;
+    T getById(ID id) throws SQLException,NoSuchDataException;
 
-    int update(T entity) throws SQLException;
+    void create(T entity) throws SQLException;
 
-    int delete(ID id) throws SQLException;
+    void update(T entity) throws SQLException, NoSuchDataException;
+
+    void delete(ID id) throws SQLException, NoSuchDataException;
+
+    default void checkIfPresent(ID id) throws SQLException,NoSuchDataException{
+        getById(id);
+    }
 }

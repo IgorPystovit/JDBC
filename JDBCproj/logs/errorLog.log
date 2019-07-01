@@ -1,0 +1,7 @@
+WARN  | 01-07-2019 | 14:31:56 | com.epam.igorpystovit.Application -> 'warnLog'  
+ERROR | 01-07-2019 | 14:31:56 | com.epam.igorpystovit.Application -> 'errorLog'  
+FATAL | 01-07-2019 | 14:31:56 | com.epam.igorpystovit.Application -> 'fatalLog'  
+WARN  | 01-07-2019 | 14:32:26 | com.epam.igorpystovit.Application -> 'warnLog'  
+ERROR | 01-07-2019 | 14:32:26 | com.epam.igorpystovit.Application -> 'errorLog'  
+FATAL | 01-07-2019 | 14:32:26 | com.epam.igorpystovit.Application -> 'fatalLog'  
+ERROR | 01-07-2019 | 19:39:52 | com.epam.igorpystovit.DAOPattern.daointerface.GeneralDAO -> 'You are trying to insert duplicate primary key'  
