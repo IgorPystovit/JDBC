@@ -112,7 +112,7 @@ public class FlightsDAOImpl implements FlightsDAO {
     }
 
     @Override
-    public void updateDateTime(int updateFlightId, String newDate, String newTime, FlightDateTimeType dateTimeType) throws SQLException, NoSuchDataException {
+    public void updateDateTime(Integer updateFlightId, String newDate, String newTime, FlightDateTimeType dateTimeType) throws SQLException, NoSuchDataException {
         PreparedStatement dateTimeUpdateStatement = null;
         switch (dateTimeType){
             case ARRIVAL:
@@ -137,7 +137,7 @@ public class FlightsDAOImpl implements FlightsDAO {
     }
 
     @Override
-    public void updatePrice(int updateFlightId, double newPrice) throws SQLException, NoSuchDataException {
+    public void updatePrice(Integer updateFlightId, double newPrice) throws SQLException, NoSuchDataException {
         try{
             checkIfPresent(updateFlightId);
             PreparedStatement priceUpdateStatement = DBCONNECTION.prepareStatement(UPDATE_PRICE);

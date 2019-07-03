@@ -79,7 +79,7 @@ public class TownsDAOImpl implements TownsDAO{
         }
     }
 
-    public void update(int updateTownId, String townName) throws SQLException,NoSuchDataException{
+    public void update(Integer updateTownId, String townName) throws SQLException,NoSuchDataException{
         try {
             checkIfPresent(updateTownId);
             PreparedStatement preparedStatement = DBCONNECTION.prepareStatement(UPDATE);

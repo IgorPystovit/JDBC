@@ -9,6 +9,6 @@ import java.sql.SQLException;
 import java.sql.Time;
 
 public interface FlightsDAO extends GeneralDAO<FlightsEntity,Integer>{
-    void updateDateTime(int updateFlightId, String newDate, String newTime, FlightDateTimeType dateTimeType) throws SQLException, NoSuchDataException;
-    void updatePrice(int updateFlightId,double newPrice) throws SQLException,NoSuchDataException;
+    void updateDateTime(Integer updateFlightId, String newDate, String newTime, FlightDateTimeType dateTimeType) throws SQLException, NoSuchDataException;
+    void updatePrice(Integer updateFlightId,double newPrice) throws SQLException,NoSuchDataException;
 }

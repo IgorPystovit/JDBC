@@ -1,5 +1,11 @@
 package com.epam.igorpystovit.DAOPattern.daointerface;
 
+import com.epam.igorpystovit.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.ClientsEntity;
 
-public interface ClientsDAO extends GeneralDAO<ClientsEntity,Integer>{}
+import java.sql.SQLException;
+
+public interface ClientsDAO extends GeneralDAO<ClientsEntity,Integer>{
+    void create(Integer id,String name,String surname,double cash) throws SQLException;
+    void update(Integer updateClientId,String name,String surname,double cash) throws SQLException, NoSuchDataException;
+}

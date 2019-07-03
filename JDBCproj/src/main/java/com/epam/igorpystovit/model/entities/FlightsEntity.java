@@ -129,7 +129,7 @@ public class FlightsEntity {
 
         sb.append("id = "+id+"\t"+" Company id = "+companyId+"\t"+" Departure town id = "+departureTownId+"\t"+
                 " Arrival town id = "+arrivalTownId+"\t"+" Departure date = "+departureDate+"\t"+" Departure time = "+departureTime+"\t"+
-                " Arrival date = "+arrivalDate+"\t"+" Arrival time = "+arrivalTime);
+                " Arrival date = "+arrivalDate+"\t"+" Arrival time = "+arrivalTime+"\t"+" Price = "+price);
         return sb.toString();
     }
 }

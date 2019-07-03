@@ -63,7 +63,7 @@ public class CompaniesDAOImpl implements CompaniesDAO{
         }
     }
 
-    public void create(int id,String name) throws SQLException{
+    public void create(Integer id,String name) throws SQLException{
         try{
             checkIfPresent(id);
             logger.error("You are trying to insert duplicate primary key");
@@ -89,11 +89,11 @@ public class CompaniesDAOImpl implements CompaniesDAO{
         }
     }
 
-    public void update(int updateCompanyId, String name) throws SQLException,NoSuchDataException{
+    public void update(Integer updateCompanyId, String newName) throws SQLException,NoSuchDataException{
         try{
             checkIfPresent(updateCompanyId);
             PreparedStatement updateStatement = DBCONNECTION.prepareStatement(UPDATE);
-            updateStatement.setString(1,name);
+            updateStatement.setString(1,newName);
             updateStatement.setInt(2, updateCompanyId);
             updateStatement.execute();
         } catch (NoSuchDataException e){
