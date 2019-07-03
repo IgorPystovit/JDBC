@@ -2,9 +2,9 @@ package com.epam.igorpystovit.DAOPattern;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.TownsDAO;
 import com.epam.igorpystovit.NoSuchDataException;
-import com.epam.igorpystovit.Transformer;
-import com.epam.igorpystovit.connectionmanager.ConnectionManager;
-import com.epam.igorpystovit.entities.TownsEntity;
+import com.epam.igorpystovit.model.transformer.Transformer;
+import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
+import com.epam.igorpystovit.model.entities.TownsEntity;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -43,19 +43,19 @@ public class TownsDAOImpl implements TownsDAO{
     public void create(TownsEntity townsEntity) throws SQLException{
         try{
             checkIfPresent(townsEntity.getTownId());
+            logger.error("You are trying to insert duplicate primary key");
         } catch (NoSuchDataException e){
             PreparedStatement preparedStatement = DBCONNECTION.prepareStatement(INSERT);
             preparedStatement.setInt(1,townsEntity.getTownId());
             preparedStatement.setString(2,townsEntity.getTownName());
             preparedStatement.execute();
-            return;
         }
-        logger.error("You are trying to insert duplicate primary key");
     }
 
     public void create(Integer id, String townName) throws SQLException{
         try{
             checkIfPresent(id);
+            logger.error("You are trying to insert duplicate primary key");
         } catch (NoSuchDataException e){
             PreparedStatement preparedStatement = DBCONNECTION.prepareStatement(INSERT);
             preparedStatement.setInt(1,id);
@@ -63,7 +63,6 @@ public class TownsDAOImpl implements TownsDAO{
             preparedStatement.execute();
             return;
         }
-        logger.error("You are trying to insert duplicate primary key");
     }
 
     @Override
@@ -73,6 +72,7 @@ public class TownsDAOImpl implements TownsDAO{
             PreparedStatement preparedStatement = DBCONNECTION.prepareStatement(UPDATE);
             preparedStatement.setString(1,townsEntity.getTownName());
             preparedStatement.setInt(2,townsEntity.getTownId());
+            preparedStatement.execute();
         } catch (NoSuchDataException e){
             System.out.println("No data with such id stored on the table");
             throw e;

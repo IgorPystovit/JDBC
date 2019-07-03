@@ -2,10 +2,10 @@ package com.epam.igorpystovit.DAOPattern;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.PlanesDAO;
 import com.epam.igorpystovit.NoSuchDataException;
-import com.epam.igorpystovit.Transformer;
-import com.epam.igorpystovit.connectionmanager.ConnectionManager;
-import com.epam.igorpystovit.entities.PlaneType;
-import com.epam.igorpystovit.entities.PlanesEntity;
+import com.epam.igorpystovit.model.transformer.Transformer;
+import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
+import com.epam.igorpystovit.model.entities.PlaneType;
+import com.epam.igorpystovit.model.entities.PlanesEntity;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -53,6 +53,7 @@ public class PlanesDAOImpl implements PlanesDAO {
     public void create(Integer id, String planeName, Integer capacity, PlaneType planeType) throws SQLException{
         try{
             checkIfPresent(id);
+            logger.error("You are trying to insert duplicate key");
         } catch (NoSuchDataException e){
             PreparedStatement insertStatement = DBCONNECTION.prepareStatement(INSERT);
             insertStatement.setInt(1,id);
@@ -61,13 +62,13 @@ public class PlanesDAOImpl implements PlanesDAO {
             insertStatement.setString(4,planeType.toString());
             insertStatement.execute();
         }
-        logger.error("You are trying to insert duplicate key");
     }
 
     @Override
     public void create(PlanesEntity plane) throws SQLException{
         try{
             checkIfPresent(plane.getId());
+            logger.error("You are trying to insert duplicate key");
         } catch (NoSuchDataException e){
             PreparedStatement insertStatement = DBCONNECTION.prepareStatement(INSERT);
             insertStatement.setInt(1,plane.getId());
@@ -76,7 +77,6 @@ public class PlanesDAOImpl implements PlanesDAO {
             insertStatement.setString(4,plane.getPlaneType().toString());
             insertStatement.execute();
         }
-        logger.error("You are trying to insert duplicate key");
     }
 
     public void update(Integer updatePlaneId,String newPlaneName,Integer newCapacity,PlaneType newPlaneType) throws NoSuchDataException,SQLException{

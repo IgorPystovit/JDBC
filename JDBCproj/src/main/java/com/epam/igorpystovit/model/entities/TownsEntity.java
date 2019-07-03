@@ -1,4 +1,4 @@
-package com.epam.igorpystovit.entities;
+package com.epam.igorpystovit.model.entities;
 
 import com.epam.igorpystovit.model.Annotations.Column;
 import com.epam.igorpystovit.model.Annotations.PrimaryKey;

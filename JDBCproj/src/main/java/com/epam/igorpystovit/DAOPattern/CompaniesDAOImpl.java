@@ -2,9 +2,9 @@ package com.epam.igorpystovit.DAOPattern;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.CompaniesDAO;
 import com.epam.igorpystovit.NoSuchDataException;
-import com.epam.igorpystovit.Transformer;
-import com.epam.igorpystovit.connectionmanager.ConnectionManager;
-import com.epam.igorpystovit.entities.CompaniesEntity;
+import com.epam.igorpystovit.model.transformer.Transformer;
+import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
+import com.epam.igorpystovit.model.entities.CompaniesEntity;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -54,25 +54,25 @@ public class CompaniesDAOImpl implements CompaniesDAO{
     public void create(CompaniesEntity company) throws SQLException{
         try{
             checkIfPresent(company.getId());
+            logger.error("You are trying to insert duplicate primary key");
         } catch (NoSuchDataException e){
             PreparedStatement insertStatement = DBCONNECTION.prepareStatement(INSERT);
             insertStatement.setInt(1,company.getId());
             insertStatement.setString(2,company.getName());
             insertStatement.execute();
         }
-        logger.error("You are trying to insert duplicate primary key");
     }
 
     public void create(int id,String name) throws SQLException{
         try{
             checkIfPresent(id);
+            logger.error("You are trying to insert duplicate primary key");
         } catch (NoSuchDataException e){
             PreparedStatement insertStatement = DBCONNECTION.prepareStatement(INSERT);
             insertStatement.setInt(1,id);
             insertStatement.setString(2,name);
             insertStatement.execute();
         }
-        logger.error("You are trying to insert duplicate primary key");
     }
 
     @Override

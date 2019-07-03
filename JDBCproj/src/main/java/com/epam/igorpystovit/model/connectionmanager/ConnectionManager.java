@@ -1,4 +1,4 @@
-package com.epam.igorpystovit.connectionmanager;
+package com.epam.igorpystovit.model.connectionmanager;
 
 import java.sql.*;
 

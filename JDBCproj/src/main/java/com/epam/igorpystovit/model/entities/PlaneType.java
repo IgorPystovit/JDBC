@@ -1,4 +1,4 @@
-package com.epam.igorpystovit.entities;
+package com.epam.igorpystovit.model.entities;
 
 public enum PlaneType {
     PASSENGER,
