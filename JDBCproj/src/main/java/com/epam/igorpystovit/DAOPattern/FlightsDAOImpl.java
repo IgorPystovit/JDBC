@@ -44,7 +44,7 @@ public class FlightsDAOImpl implements FlightsDAO {
 
     @Override
     public FlightsEntity getById(Integer id) throws SQLException, NoSuchDataException {
-        FlightsEntity flight = null;
+            FlightsEntity flight = null;
         PreparedStatement selectByIdStatement = DBCONNECTION.prepareStatement(SELECT_BY_ID);
         selectByIdStatement.setInt(1,id);
         ResultSet selectByIdResult = selectByIdStatement.executeQuery();
@@ -68,9 +68,9 @@ public class FlightsDAOImpl implements FlightsDAO {
             insertStatement.setInt(2,flight.getCompanyId());
             insertStatement.setInt(3,flight.getDepartureTownId());
             insertStatement.setInt(4,flight.getArrivalTownId());
-            insertStatement.setDate(5,flight.getDepartureDate());
+            insertStatement.setString(5,flight.getDepartureDate().toString());
             insertStatement.setTime(6,flight.getDepartureTime());
-            insertStatement.setDate(7,flight.getArrivalDate());
+            insertStatement.setString(7,flight.getArrivalDate().toString());
             insertStatement.setTime(8,flight.getArrivalTime());
             insertStatement.setDouble(9,flight.getPrice());
             insertStatement.execute();
@@ -98,9 +98,9 @@ public class FlightsDAOImpl implements FlightsDAO {
             updateStatement.setInt(1,flight.getCompanyId());
             updateStatement.setInt(2,flight.getDepartureTownId());
             updateStatement.setInt(3,flight.getArrivalTownId());
-            updateStatement.setDate(4,flight.getDepartureDate());
+            updateStatement.setString(4,flight.getDepartureDate().toString());
             updateStatement.setTime(5,flight.getDepartureTime());
-            updateStatement.setDate(6,flight.getArrivalDate());
+            updateStatement.setString(6,flight.getArrivalDate().toString());
             updateStatement.setTime(7,flight.getArrivalTime());
             updateStatement.setDouble(8,flight.getPrice());
             updateStatement.setInt(9,flight.getId());

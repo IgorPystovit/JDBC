@@ -9,4 +9,5 @@ import java.sql.SQLException;
 
 public interface FlightsPlanesDAO extends GeneralDAO<FlightsPlanesEntity, PK_FlightsPlanes>{
     void updateSeatNum(PK_FlightsPlanes updateRowId,int newSeatNum) throws SQLException, NoSuchDataException;
+    void create(PK_FlightsPlanes primaryKey) throws SQLException;
 }

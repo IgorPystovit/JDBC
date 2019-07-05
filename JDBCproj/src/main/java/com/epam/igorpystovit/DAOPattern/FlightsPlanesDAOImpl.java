@@ -3,9 +3,11 @@ package com.epam.igorpystovit.DAOPattern;
 import com.epam.igorpystovit.DAOPattern.daointerface.FlightsPlanesDAO;
 import com.epam.igorpystovit.DAOPattern.daointerface.PlanesDAO;
 import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.controller.services.PlanesService;
 import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
 import com.epam.igorpystovit.model.entities.FlightsPlanesEntity;
 import com.epam.igorpystovit.model.entities.PK_FlightsPlanes;
+import com.epam.igorpystovit.model.entities.PlanesEntity;
 import com.epam.igorpystovit.model.transformer.Transformer;
 
 import java.sql.*;
@@ -65,6 +67,25 @@ public class FlightsPlanesDAOImpl implements FlightsPlanesDAO {
         }
     }
 
+    @Override
+    public void create(PK_FlightsPlanes primaryKey) throws SQLException {
+        PlanesService planesService = new PlanesService();
+        try{
+            checkIfPresent(primaryKey);
+            logger.error("You are trying to insert duplicate primary key");
+        } catch (NoSuchDataException e){
+            try{
+                PlanesEntity planesEntity = planesService.getById(primaryKey.getPlaneId());
+                PreparedStatement insertStatement = DBCONNECTION.prepareStatement(INSERT);
+                insertStatement.setInt(1,primaryKey.getFlightId());
+                insertStatement.setInt(2,primaryKey.getPlaneId());
+                insertStatement.setInt(3,planesEntity.getCapacity());
+                insertStatement.execute();
+            } catch (NoSuchDataException ex){
+                logger.error("An error occurred while creating Flights_Planes data row");
+            }
+        }
+    }
 
     @Override
     public void update(FlightsPlanesEntity entity) throws SQLException, NoSuchDataException {

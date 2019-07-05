@@ -1,16 +1,24 @@
 package com.epam.igorpystovit.DAOPattern;
 
 import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.entities.FlightsEntity;
 import com.epam.igorpystovit.model.entities.FlightsPlanesEntity;
 import com.epam.igorpystovit.model.entities.PK_FlightsPlanes;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assumptions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
-
+//truncate Flights_Planes table before testing
 class FlightsPlanesDAOImplTest {
-
+    @BeforeAll
+    private static void fillFlights() throws SQLException{
+        FlightsEntity flight = new FlightsEntity
+                (10,1,1,2,"20190619","110000","20190620","193000",3000);
+        FlightsDAOImpl flightsDAO = new FlightsDAOImpl();
+        flightsDAO.create(flight);
+    }
     @Test
     public void create_test() throws SQLException, NoSuchDataException {
         FlightsPlanesDAOImpl flightsPlanesDAO = new FlightsPlanesDAOImpl();
