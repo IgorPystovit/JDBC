@@ -1,2 +1,2 @@
 # JDBC
-JDBC project to Airport database
+JDBC project for Airport database
