@@ -2,18 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b58c81ae-0f32-4ec9-b1ce-0bb8a9b47083" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DateTimeComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsPlanesServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/OrdersDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/PlanesCompaniesDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/OrdersDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/PlanesCompaniesDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/OrdersService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/PlanesCompaniesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/OrdersEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/PlanesCompaniesEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/OrdersDAOImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/PlanesCompaniesDAOImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/OrdersServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/PlanesCompaniesServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AirportDB/Airport_DB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../AirportDB/Airport_DB.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorLog.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorLog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/infoLog.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/infoLog.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/ClientsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/ClientsDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/FlightsPlanesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/FlightsPlanesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsPlanesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsPlanesService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/PlanesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/PlanesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/ClientsDAOImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/ClientsDAOImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/FlightsDAOImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsDAOImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/PlanesDAOImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/PlanesDAOImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsPlanesServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsServiceTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,35 +64,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsServiceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="18" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/FlightsDAOImplTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="19" column="4" selection-start-line="13" selection-start-column="3" selection-end-line="19" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsPlanesServiceTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/OrdersServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+            <state relative-caret-position="568">
+              <caret line="339" column="72" selection-start-line="339" selection-start-column="72" selection-end-line="339" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,10 +77,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/FlightsPlanesDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/OrdersDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+            <state relative-caret-position="149">
+              <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,28 +89,35 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/Application.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/OrdersService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="39" column="82" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="39" selection-end-column="82" />
+            <state relative-caret-position="343">
+              <caret line="81" column="20" lean-forward="true" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1478ced2-af80-407c-b028-3ad4ff075ca6/console.sql">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            <state relative-caret-position="1290">
+              <caret line="124" selection-start-line="124" selection-end-line="124" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3578#3579#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsPlanesService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/OrdersEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+            <state relative-caret-position="225">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,32 +128,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="157" column="85" selection-start-line="157" selection-start-column="85" selection-end-line="157" selection-end-column="85" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1130#1131#0" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
-                <element signature="e#1188#1189#0" expanded="true" />
-                <element signature="e#1228#1229#0" expanded="true" />
-                <element signature="e#1287#1288#0" expanded="true" />
-                <element signature="e#1345#1346#0" expanded="true" />
-                <element signature="e#1386#1387#0" expanded="true" />
-                <element signature="e#1430#1431#0" expanded="true" />
-                <element signature="e#1493#1494#0" expanded="true" />
-                <element signature="e#1555#1556#0" expanded="true" />
-                <element signature="e#1598#1599#0" expanded="true" />
-                <element signature="e#1644#1645#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+            <state relative-caret-position="885">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,13 +138,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImplTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/GeneralDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="17" column="72" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="17" selection-end-column="72" />
+            <state relative-caret-position="270">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/PlanesCompaniesService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/PlanesCompaniesDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1478ced2-af80-407c-b028-3ad4ff075ca6/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -178,8 +187,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -194,30 +203,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/entities/TownsEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/entities/CompaniesEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/entities/PlaneType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/PlanesEntityDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/entities/PlanesEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/GeneralDAO.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/PlanesDAOImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/entities/ClientsEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/Transformer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/ClientsDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/ClientsDAOImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/services/TownsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/TownsEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/Controller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightDateTimeType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/TownsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/PlanesDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/TownsDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/TownsDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/PlanesDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/CompaniesDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/CompaniesDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/ClientsDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/SomeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/ClientsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/Service.java" />
@@ -231,20 +222,38 @@
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/Annotations/PrimaryKey.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsPlanesEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/PK_FlightsPlanes.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/FlightsDAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DateTimeParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DateTimeComparator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/transformer/Transformer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/FlightsPlanesDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsPlanesService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/Application.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1478ced2-af80-407c-b028-3ad4ff075ca6/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/OrdersEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsEntity.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/FlightsDAOImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsPlanesServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/OrdersDAOImplTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/PlanesCompaniesDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/PlanesEntity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/PlanesCompaniesDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/PlanesCompaniesDAOImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsPlanesService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/PlanesCompaniesEntity.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/PlanesCompaniesService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/PlanesCompaniesService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/PlanesCompaniesServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsDAOImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/OrdersDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/OrdersDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/ClientsDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/ClientsDAOImpl.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1478ced2-af80-407c-b028-3ad4ff075ca6/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/OrdersService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/OrdersServiceTest.java" />
       </list>
     </option>
   </component>
@@ -254,6 +263,17 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="JDBSProject" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -267,8 +287,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -453,11 +473,14 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.epam.igorpystovit.controller.services" />
+      <recent name="com.epam.igorpystovit.DAOPattern" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.epam.igorpystovit.DAOPattern" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -476,36 +499,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FlightsPlanesServiceTest">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.Application" />
-      <module name="JDBSProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.igorpystovit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FlightsPlanesDAOImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JDBSProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.epam.igorpystovit.DAOPattern.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.epam.igorpystovit.DAOPattern" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.DAOPattern.FlightsPlanesDAOImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FlightsPlanesServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.OrdersServiceTest">
+    <configuration name="OrdersServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JDBSProject" />
       <extension name="coverage">
         <pattern>
@@ -514,13 +509,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.epam.igorpystovit.controller.services" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.controller.services.FlightsPlanesServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.controller.services.OrdersServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FlightsPlanesServiceTest.update_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrdersServiceTest.delete_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JDBSProject" />
       <extension name="coverage">
         <pattern>
@@ -529,14 +524,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.epam.igorpystovit.controller.services" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.controller.services.FlightsPlanesServiceTest" />
-      <option name="METHOD_NAME" value="update_test" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.controller.services.OrdersServiceTest" />
+      <option name="METHOD_NAME" value="delete_test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FlightsServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrdersServiceTest.if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JDBSProject" />
       <extension name="coverage">
         <pattern>
@@ -545,19 +540,52 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.epam.igorpystovit.controller.services" />
-      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.controller.services.FlightsServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.controller.services.OrdersServiceTest" />
+      <option name="METHOD_NAME" value="if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdersServiceTest.if_flight_id_changed_decrease_new_flight_id_available_seats_num_and_clients_cash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JDBSProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.igorpystovit.controller.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.igorpystovit.controller.services" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.controller.services.OrdersServiceTest" />
+      <option name="METHOD_NAME" value="if_flight_id_changed_decrease_new_flight_id_available_seats_num_and_clients_cash" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdersServiceTest.if_there_is_no_available_for_updated_flight_then_rollback" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JDBSProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.igorpystovit.controller.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.epam.igorpystovit.controller.services" />
+      <option name="MAIN_CLASS_NAME" value="com.epam.igorpystovit.controller.services.OrdersServiceTest" />
+      <option name="METHOD_NAME" value="if_there_is_no_available_for_updated_flight_then_rollback" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FlightsPlanesServiceTest" />
-        <item itemvalue="JUnit.FlightsPlanesServiceTest.update_test" />
-        <item itemvalue="Application.Application" />
-        <item itemvalue="JUnit.FlightsPlanesDAOImplTest" />
-        <item itemvalue="JUnit.FlightsServiceTest" />
+        <item itemvalue="JUnit.OrdersServiceTest" />
+        <item itemvalue="JUnit.OrdersServiceTest.delete_test" />
+        <item itemvalue="JUnit.OrdersServiceTest.if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased" />
+        <item itemvalue="JUnit.OrdersServiceTest.if_flight_id_changed_decrease_new_flight_id_available_seats_num_and_clients_cash" />
+        <item itemvalue="JUnit.OrdersServiceTest.if_there_is_no_available_for_updated_flight_then_rollback" />
       </list>
     </recent_temporary>
   </component>
@@ -598,50 +626,57 @@
       <workItem from="1562253513888" duration="2919000" />
       <workItem from="1562257398105" duration="2344000" />
       <workItem from="1562264011938" duration="7201000" />
-      <workItem from="1562314857295" duration="8456000" />
+      <workItem from="1562314857295" duration="8618000" />
+      <workItem from="1562341289854" duration="4416000" />
+      <workItem from="1562357976504" duration="4893000" />
+      <workItem from="1562396850167" duration="2245000" />
+      <workItem from="1562411269166" duration="16735000" />
+      <workItem from="1562443929813" duration="3286000" />
+      <workItem from="1562491434359" duration="3105000" />
+      <workItem from="1562516321511" duration="6668000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FlightsPlanesServiceTest - 2019.07.05 at 12h 46m 33s.xml">
-      <configuration name="FlightsPlanesServiceTest" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest_if_flight_id_changed_decrease_new_flight_id_available_seats_num_and_clients_cash - 2019.07.07 at 21h 54m 11s.xml">
+      <configuration name="OrdersServiceTest.if_flight_id_changed_decrease_new_flight_id_available_seats_num_and_clients_cash" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FlightsPlanesServiceTest - 2019.07.05 at 13h 22m 38s.xml">
-      <configuration name="FlightsPlanesServiceTest" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest_if_flight_id_changed_decrease_new_flight_id_available_seats_num_and_clients_cash - 2019.07.07 at 21h 55m 12s.xml">
+      <configuration name="OrdersServiceTest.if_flight_id_changed_decrease_new_flight_id_available_seats_num_and_clients_cash" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FlightsPlanesServiceTest_update_test - 2019.07.05 at 13h 33m 27s.xml">
-      <configuration name="FlightsPlanesServiceTest.update_test" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest_if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased - 2019.07.07 at 21h 58m 53s.xml">
+      <configuration name="OrdersServiceTest.if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FlightsPlanesServiceTest_update_test - 2019.07.05 at 13h 33m 45s.xml">
-      <configuration name="FlightsPlanesServiceTest.update_test" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest_if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased - 2019.07.07 at 21h 59m 28s.xml">
+      <configuration name="OrdersServiceTest.if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FlightsPlanesServiceTest_update_test - 2019.07.05 at 13h 33m 53s.xml">
-      <configuration name="FlightsPlanesServiceTest.update_test" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest_if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased - 2019.07.07 at 22h 07m 53s.xml">
+      <configuration name="OrdersServiceTest.if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FlightsPlanesServiceTest_update_test - 2019.07.05 at 13h 35m 05s.xml">
-      <configuration name="FlightsPlanesServiceTest.update_test" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest - 2019.07.07 at 22h 09m 05s.xml">
+      <configuration name="OrdersServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FlightsPlanesServiceTest_update_test - 2019.07.05 at 13h 36m 04s.xml">
-      <configuration name="FlightsPlanesServiceTest.update_test" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest - 2019.07.07 at 22h 10m 24s.xml">
+      <configuration name="OrdersServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FlightsPlanesServiceTest - 2019.07.05 at 13h 36m 11s.xml">
-      <configuration name="FlightsPlanesServiceTest" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest_if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased - 2019.07.07 at 22h 11m 17s.xml">
+      <configuration name="OrdersServiceTest.if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FlightsPlanesServiceTest - 2019.07.05 at 13h 36m 23s.xml">
-      <configuration name="FlightsPlanesServiceTest" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest_if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased - 2019.07.07 at 22h 11m 42s.xml">
+      <configuration name="OrdersServiceTest.if_client_id_changed_available_seats_num_remains_constant_clients_cash_decreased" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FlightsPlanesServiceTest - 2019.07.05 at 13h 37m 21s.xml">
-      <configuration name="FlightsPlanesServiceTest" configurationId="JUnit" />
+    <history-entry file="OrdersServiceTest - 2019.07.07 at 22h 11m 51s.xml">
+      <configuration name="OrdersServiceTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139208000" />
+    <option name="totallyTimeSpent" value="180718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26840067" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29164362" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -650,22 +685,22 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991699" visible="true" weight="0.39956802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991699" visible="true" weight="0.3790497" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3650108" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Console" order="7" sideWeight="0.4997233" weight="0.2149028" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.18142548" />
+      <window_info anchor="bottom" id="Database Console" order="7" sideWeight="0.4997233" weight="0.32181427" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.150108" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5008301" side_tool="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32937366" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32937366" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24958494" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32982844" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.1615938" />
@@ -676,154 +711,29 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/PlanesCompaniesServiceTest.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/Application.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/time/temporal/TemporalAccessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.sql/java/sql/Time.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/time/LocalTime.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/time/LocalDate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8190">
-          <caret line="35" column="60" selection-start-line="35" selection-start-column="59" selection-end-line="35" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.sql/java/sql/Date.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1215">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/TownsEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/MetaDataDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/CompaniesDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="98" selection-start-line="9" selection-start-column="98" selection-end-line="9" selection-end-column="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/ClientsDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="120" selection-start-line="9" selection-start-column="120" selection-end-line="9" selection-end-column="120" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/Service.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/TownsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="44" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/ClientsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/PlanesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/CompaniesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/FlightsDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/TownsDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="94" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/PlanesDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="142" selection-start-line="10" selection-start-column="142" selection-end-line="10" selection-end-column="142" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/CompositeKeyTuple.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/Controller.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/Annotations/PrimaryKeyComposite.java">
@@ -853,52 +763,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/ClientsDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="96" column="45" lean-forward="true" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2.jar!/org/junit/jupiter/api/Assumptions.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="1746" selection-start-line="1746" selection-end-line="1746" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/ClientsDAOImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsPlanesEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#731#732#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#822#823#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#997#998#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -932,13 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar!/com/mysql/cj/jdbc/ConnectionImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="1315" selection-start-line="1315" selection-end-line="1315" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/NoSuchDataException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -953,16 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/GeneralDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/CompaniesDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -973,30 +824,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/transformer/Transformer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="64" column="61" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DateTimeParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1017,71 +848,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsEntity.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/ClientsDAOImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2080#2081#0" expanded="true" />
-            <element signature="e#2105#2106#0" expanded="true" />
-            <element signature="e#2259#2260#0" expanded="true" />
-            <element signature="e#2800#2801#0" expanded="true" />
-            <element signature="e#2836#2837#0" expanded="true" />
-            <element signature="e#3009#3010#0" expanded="true" />
-            <element signature="e#3045#3046#0" expanded="true" />
-            <element signature="e#3208#3209#0" expanded="true" />
-            <element signature="e#3242#3243#0" expanded="true" />
-            <element signature="e#3405#3406#0" expanded="true" />
-            <element signature="e#3439#3440#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/PlanesEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="105">
+          <caret line="12" column="51" selection-start-line="12" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsPlanesEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        <state relative-caret-position="360">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#775#776#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/FlightsDAOImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="4" selection-start-line="13" selection-start-column="3" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="72" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="17" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsPlanesServiceTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/FlightsPlanesDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+        <state relative-caret-position="150">
+          <caret line="10" column="50" lean-forward="true" selection-start-line="10" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/PlanesCompaniesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="111" selection-start-line="9" selection-start-column="111" selection-end-line="9" selection-end-column="111" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1090,8 +896,206 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+        <state relative-caret-position="649">
+          <caret line="120" column="4" lean-forward="true" selection-start-line="120" selection-start-column="4" selection-end-line="130" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/CompaniesEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/PlanesEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="61" column="136" selection-start-line="61" selection-start-column="136" selection-end-line="61" selection-end-column="136" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsPlanesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="78" column="5" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="78" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/FlightsDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/PlanesCompaniesEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/PlanesCompaniesServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsDAOImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-815">
+          <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/FlightsPlanesDAOImplTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/PlanesCompaniesDAOImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/DAOPattern/OrdersDAOImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/TownsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/PlanesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/ClientsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/ClientsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/ClientsDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/OrdersDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="47" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="27" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DateTimeParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar!/com/mysql/cj/jdbc/ConnectionImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="2263" selection-start-line="2263" selection-end-line="2263" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="1746" selection-start-line="1746" selection-end-line="1746" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/FlightsEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3578#3579#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/model/entities/OrdersEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1100,37 +1104,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="157" column="85" selection-start-line="157" selection-start-column="85" selection-end-line="157" selection-end-column="85" />
+        <state relative-caret-position="885">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1130#1131#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1188#1189#0" expanded="true" />
-            <element signature="e#1228#1229#0" expanded="true" />
-            <element signature="e#1287#1288#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1493#1494#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="e#1644#1645#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/daointerface/GeneralDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="39" column="82" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="39" selection-end-column="82" />
+        <state relative-caret-position="270">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/FlightsPlanesService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/PlanesCompaniesService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+        <state relative-caret-position="240">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/PlanesCompaniesDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/controller/services/OrdersService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="81" column="20" lean-forward="true" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1139,15 +1154,25 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1478ced2-af80-407c-b028-3ad4ff075ca6/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state relative-caret-position="270">
+          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/FlightsPlanesServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/epam/igorpystovit/DAOPattern/OrdersDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+        <state relative-caret-position="149">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/epam/igorpystovit/controller/services/OrdersServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="339" column="72" selection-start-line="339" selection-start-column="72" selection-end-line="339" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

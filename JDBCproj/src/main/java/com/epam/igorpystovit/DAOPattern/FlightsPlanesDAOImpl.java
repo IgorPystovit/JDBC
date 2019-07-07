@@ -1,7 +1,6 @@
 package com.epam.igorpystovit.DAOPattern;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.FlightsPlanesDAO;
-import com.epam.igorpystovit.DAOPattern.daointerface.PlanesDAO;
 import com.epam.igorpystovit.NoSuchDataException;
 import com.epam.igorpystovit.controller.services.PlanesService;
 import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
@@ -40,10 +39,10 @@ public class FlightsPlanesDAOImpl implements FlightsPlanesDAO {
     @Override
     public FlightsPlanesEntity getById(PK_FlightsPlanes primaryKey) throws SQLException, NoSuchDataException {
         FlightsPlanesEntity flightsPlanesEntity = null;
-        PreparedStatement selectByIdSatement = DBCONNECTION.prepareStatement(SELECT_BY_ID);
-        selectByIdSatement.setInt(1,primaryKey.getFlightId());
-        selectByIdSatement.setInt(2,primaryKey.getPlaneId());
-        ResultSet selectByIdResult = selectByIdSatement.executeQuery();
+        PreparedStatement selectByIdStatement = DBCONNECTION.prepareStatement(SELECT_BY_ID);
+        selectByIdStatement.setInt(1,primaryKey.getFlightId());
+        selectByIdStatement.setInt(2,primaryKey.getPlaneId());
+        ResultSet selectByIdResult = selectByIdStatement.executeQuery();
         while (selectByIdResult.next()){
             flightsPlanesEntity = (FlightsPlanesEntity) transformer.transformFromResultSet(selectByIdResult);
         }

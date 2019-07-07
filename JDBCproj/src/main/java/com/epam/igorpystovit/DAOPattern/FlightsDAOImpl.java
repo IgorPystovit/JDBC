@@ -14,10 +14,10 @@ import java.util.List;
 public class FlightsDAOImpl implements FlightsDAO {
     private final String SELECT = "select * from Flights";
     private final String SELECT_BY_ID = "select * from Flights where id = ?";
-    private final String INSERT = "insert Flights(id,company_id,departure_town_id,arrival_town_id,departure_date,departure_time,arrival_date,arrival_time,price) " +
-            "values(?,?,?,?,?,?,?,?,?)";
+    private final String INSERT = "insert Flights(id,company_id,departure_town_id,arrival_town_id,departure_date,departure_time,arrival_date,arrival_time,plane_id,price) " +
+            "values(?,?,?,?,?,?,?,?,?,?)";
     private final String UPDATE = "update Flights set company_id = ? , departure_town_id = ? , arrival_town_id = ? , departure_date = ? ," +
-            "departure_time = ? , arrival_date = ? , arrival_time = ? , price = ? where id = ?";
+            "departure_time = ? , arrival_date = ? , arrival_time = ? ,plane_id = ?, price = ? where id = ?";
     private final String UPDATE_ARRIVAL_DATE_TIME = "update Flights set arrival_date = ? , arrival_time = ? where id = ?";
     private final String UPDATE_DEPARTURE_DATE_TIME = "update Flights set departure_date = ? , departure_time = ? where id = ?";
     private final String UPDATE_PRICE = "update Flights set price = ? where id = ?";
@@ -72,7 +72,8 @@ public class FlightsDAOImpl implements FlightsDAO {
             insertStatement.setTime(6,flight.getDepartureTime());
             insertStatement.setString(7,flight.getArrivalDate().toString());
             insertStatement.setTime(8,flight.getArrivalTime());
-            insertStatement.setDouble(9,flight.getPrice());
+            insertStatement.setInt(9,flight.getPlaneId());
+            insertStatement.setDouble(10,flight.getPrice());
             insertStatement.execute();
         }
     }
@@ -102,8 +103,9 @@ public class FlightsDAOImpl implements FlightsDAO {
             updateStatement.setTime(5,flight.getDepartureTime());
             updateStatement.setString(6,flight.getArrivalDate().toString());
             updateStatement.setTime(7,flight.getArrivalTime());
-            updateStatement.setDouble(8,flight.getPrice());
-            updateStatement.setInt(9,flight.getId());
+            updateStatement.setInt(8,flight.getPlaneId());
+            updateStatement.setDouble(9,flight.getPrice());
+            updateStatement.setInt(10,flight.getId());
             updateStatement.execute();
         } catch (NoSuchDataException e){
             logger.error("A row you are trying to update does not exist");

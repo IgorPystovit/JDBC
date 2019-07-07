@@ -7,11 +7,6 @@ import com.epam.igorpystovit.model.Annotations.Table;
 
 import java.sql.Date;
 import java.sql.Time;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 
 @Table(name = "Flights")
 public class FlightsEntity {
@@ -34,12 +29,14 @@ public class FlightsEntity {
     private Time arrivalTime;
     @Column(name = "price",length = 200)
     private double price;
+    @Column(name = "plane_id",length = 200)
+    private int planeId;
 
     private DateTimeParser dateTimeParser = new DateTimeParser();
 
     public FlightsEntity(){}
     public FlightsEntity(int id,int companyId,int departureTownId,int arrivalTownId,
-                         String departureDate,String departureTime,String arrivalDate,String arrivalTime,double price){
+                         String departureDate,String departureTime,String arrivalDate,String arrivalTime,int planeId,double price){
         this.id = id;
         this.companyId = companyId;
         this.departureTownId = departureTownId;
@@ -49,6 +46,7 @@ public class FlightsEntity {
         this.arrivalDate = dateTimeParser.dateParser(arrivalDate);
         this.arrivalTime = dateTimeParser.timeParser(arrivalTime);
         this.price = price;
+        this.planeId = planeId;
     }
 
     public void setId(int id) {
@@ -123,13 +121,21 @@ public class FlightsEntity {
         return price;
     }
 
+    public int getPlaneId() {
+        return planeId;
+    }
+
+    public void setPlaneId(int planeId) {
+        this.planeId = planeId;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
         sb.append("id = "+id+"\t"+" Company id = "+companyId+"\t"+" Departure town id = "+departureTownId+"\t"+
                 " Arrival town id = "+arrivalTownId+"\t"+" Departure date = "+departureDate+"\t"+" Departure time = "+departureTime+"\t"+
-                " Arrival date = "+arrivalDate+"\t"+" Arrival time = "+arrivalTime+"\t"+" Price = "+price);
+                " Arrival date = "+arrivalDate+"\t"+" Arrival time = "+arrivalTime+"\t"+" Plane id = "+planeId+"\t"+" Price = "+price);
         return sb.toString();
     }
 }

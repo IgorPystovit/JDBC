@@ -1,6 +1,7 @@
-package com.epam.igorpystovit;
+package com.epam.igorpystovit.DAOPattern;
 
 import com.epam.igorpystovit.DAOPattern.ClientsDAOImpl;
+import com.epam.igorpystovit.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.ClientsEntity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,7 @@ public class ClientsDAOImplTest {
     }
 
     @Test
-    public void create_test() throws SQLException,NoSuchDataException{
+    public void create_test() throws SQLException, NoSuchDataException {
         ClientsDAOImpl clientsDAO = new ClientsDAOImpl();
         create_some();
         Assertions.assertEquals("Nastya",clientsDAO.getById(2).getName());

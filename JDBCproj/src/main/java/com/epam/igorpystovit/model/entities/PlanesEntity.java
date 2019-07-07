@@ -59,7 +59,7 @@ public class PlanesEntity {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("id = "+id+"\t"+"name = "+name+"\t"+"capacity = "+capacity+"\t"+"plane type = "+planeType.toString().toLowerCase());
+        sb.append("id = "+id+"\t"+"name = "+name+"\t"+"capacity = "+capacity+"\t"+"plane type = "+planeType.toString().toLowerCase()+"\n");
         return sb.toString();
     }
 }

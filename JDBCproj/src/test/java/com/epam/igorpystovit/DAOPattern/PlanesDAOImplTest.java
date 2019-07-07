@@ -1,6 +1,7 @@
-package com.epam.igorpystovit;
+package com.epam.igorpystovit.DAOPattern;
 
 import com.epam.igorpystovit.DAOPattern.PlanesDAOImpl;
+import com.epam.igorpystovit.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.PlaneType;
 import com.epam.igorpystovit.model.entities.PlanesEntity;
 import org.junit.jupiter.api.Assertions;
@@ -16,7 +17,7 @@ public class PlanesDAOImplTest {
     }
 
     @Test
-    public void getById_test() throws SQLException,NoSuchDataException{
+    public void getById_test() throws SQLException, NoSuchDataException {
         PlanesDAOImpl planesDAO = new PlanesDAOImpl();
         Assertions.assertEquals("Boeing-747",planesDAO.getById(4).getName());
     }

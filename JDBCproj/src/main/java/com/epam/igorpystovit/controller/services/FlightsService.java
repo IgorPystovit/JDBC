@@ -1,9 +1,7 @@
 package com.epam.igorpystovit.controller.services;
 
-import com.epam.igorpystovit.DAOPattern.CompaniesDAOImpl;
 import com.epam.igorpystovit.DAOPattern.FlightDateTimeType;
 import com.epam.igorpystovit.DAOPattern.FlightsDAOImpl;
-import com.epam.igorpystovit.DAOPattern.TownsDAOImpl;
 import com.epam.igorpystovit.DAOPattern.daointerface.FlightsDAO;
 import com.epam.igorpystovit.DateTimeComparator;
 import com.epam.igorpystovit.NoSuchDataException;
@@ -15,8 +13,9 @@ import java.util.List;
 
 public class FlightsService implements FlightsDAO {
     private FlightsDAOImpl flightsDAO = new FlightsDAOImpl();
-    private CompaniesDAOImpl companiesDAO = new CompaniesDAOImpl();
-    private TownsDAOImpl townsDAO = new TownsDAOImpl();
+    private CompaniesService companiesDAO = new CompaniesService();
+    private TownsService townsDAO = new TownsService();
+    private PlanesCompaniesService planesCompaniesService = new PlanesCompaniesService();
 
     private class FlightKey{
         private int companyId;
@@ -68,9 +67,11 @@ public class FlightsService implements FlightsDAO {
     @Override
     public void create(FlightsEntity flight) throws SQLException {
         try{
+            planesCompaniesService.checkIfPresent(flight.getPlaneId());
             companiesDAO.checkIfPresent(flight.getCompanyId());
             townsDAO.checkIfPresent(flight.getArrivalTownId());
             townsDAO.checkIfPresent(flight.getDepartureTownId());
+
             if (checkIfFlightDateTimePresent(flight)){
                 logger.error("You are trying to insert duplicate row");
                 return;

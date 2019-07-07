@@ -15,6 +15,7 @@ public class ClientsDAOImpl implements ClientsDAO {
     private final String SELECT_BY_ID = "select * from Clients where id = ?";
     private final String INSERT = "insert Clients(id,name,surname,cash) values(?,?,?,?)";
     private final String UPDATE = "update Clients set name = ? , surname = ? , cash = ? where id = ?";
+    private final String UPDATE_CASH = "update Clients set cash = ? where id = ?";
     private final String DELETE = "delete from Clients where id = ?";
     private final Connection DBCONNECTION;
     private final Transformer<ClientsEntity> transformer = new Transformer<>(ClientsEntity.class);
