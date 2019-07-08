@@ -1,4 +1,4 @@
-package com.epam.igorpystovit;
+package com.epam.igorpystovit.model.datetime;
 
 import java.sql.Time;
 import java.util.Date;

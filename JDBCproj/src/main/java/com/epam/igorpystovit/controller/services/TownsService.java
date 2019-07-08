@@ -1,15 +1,15 @@
 package com.epam.igorpystovit.controller.services;
 
-import com.epam.igorpystovit.DAOPattern.TownsDAOImpl;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.TownsDAOImpl;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.TownsDAO;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.TownsEntity;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class TownsService implements TownsDAO{
+public class TownsService implements TownsDAO,Service<TownsEntity,Integer>{
     private final TownsDAOImpl townsDAO = new TownsDAOImpl();
 
 

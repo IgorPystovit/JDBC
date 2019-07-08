@@ -5,7 +5,7 @@ import com.epam.igorpystovit.model.Annotations.PrimaryKey;
 import com.epam.igorpystovit.model.Annotations.Table;
 
 @Table(name = "Planes")
-public class PlanesEntity {
+public class    PlanesEntity {
     @PrimaryKey
     @Column(name = "id",length = 200)
     private int id;

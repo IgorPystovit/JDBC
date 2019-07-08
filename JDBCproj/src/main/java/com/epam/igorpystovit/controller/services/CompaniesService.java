@@ -1,14 +1,14 @@
 package com.epam.igorpystovit.controller.services;
 
-import com.epam.igorpystovit.DAOPattern.CompaniesDAOImpl;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.CompaniesDAOImpl;
 import com.epam.igorpystovit.DAOPattern.daointerface.CompaniesDAO;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.CompaniesEntity;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class CompaniesService implements CompaniesDAO {
+public class CompaniesService implements CompaniesDAO,Service<CompaniesEntity,Integer> {
     private CompaniesDAOImpl companiesDAO = new CompaniesDAOImpl();
 
     @Override

@@ -1,8 +1,8 @@
-package com.epam.igorpystovit.DAOPattern;
+package com.epam.igorpystovit.DAOPattern.daoimplementations;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.FlightsDAO;
-import com.epam.igorpystovit.DateTimeParser;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.datetime.DateTimeParser;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
 import com.epam.igorpystovit.model.entities.FlightsEntity;
 import com.epam.igorpystovit.model.transformer.Transformer;
@@ -72,7 +72,7 @@ public class FlightsDAOImpl implements FlightsDAO {
             insertStatement.setTime(6,flight.getDepartureTime());
             insertStatement.setString(7,flight.getArrivalDate().toString());
             insertStatement.setTime(8,flight.getArrivalTime());
-            insertStatement.setInt(9,flight.getPlaneId());
+            insertStatement.setInt(9,flight.getPlaneCompanyId());
             insertStatement.setDouble(10,flight.getPrice());
             insertStatement.execute();
         }
@@ -103,7 +103,7 @@ public class FlightsDAOImpl implements FlightsDAO {
             updateStatement.setTime(5,flight.getDepartureTime());
             updateStatement.setString(6,flight.getArrivalDate().toString());
             updateStatement.setTime(7,flight.getArrivalTime());
-            updateStatement.setInt(8,flight.getPlaneId());
+            updateStatement.setInt(8,flight.getPlaneCompanyId());
             updateStatement.setDouble(9,flight.getPrice());
             updateStatement.setInt(10,flight.getId());
             updateStatement.execute();

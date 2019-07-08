@@ -1,7 +1,6 @@
 package com.epam.igorpystovit.controller.services;
 
-import com.epam.igorpystovit.DAOPattern.PlanesCompaniesDAOImpl;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.PlaneType;
 import com.epam.igorpystovit.model.entities.PlanesCompaniesEntity;
 import org.junit.jupiter.api.AfterAll;

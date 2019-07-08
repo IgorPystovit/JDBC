@@ -1,7 +1,7 @@
 package com.epam.igorpystovit.DAOPattern;
 
-import com.epam.igorpystovit.DAOPattern.daointerface.PlanesCompaniesDAO;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.PlanesCompaniesDAOImpl;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.controller.services.CompaniesService;
 import com.epam.igorpystovit.controller.services.PlanesService;
 import com.epam.igorpystovit.model.entities.PlaneType;

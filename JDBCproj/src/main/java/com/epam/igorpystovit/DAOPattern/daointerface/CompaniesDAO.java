@@ -1,6 +1,6 @@
 package com.epam.igorpystovit.DAOPattern.daointerface;
 
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.CompaniesEntity;
 
 import java.sql.SQLException;

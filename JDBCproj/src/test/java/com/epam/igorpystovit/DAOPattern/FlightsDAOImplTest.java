@@ -1,11 +1,12 @@
 package com.epam.igorpystovit.DAOPattern;
 
+import com.epam.igorpystovit.DAOPattern.daoimplementations.FlightDateTimeType;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.FlightsDAOImpl;
 import com.epam.igorpystovit.DAOPattern.daointerface.FlightsDAO;
-import com.epam.igorpystovit.DateTimeParser;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.datetime.DateTimeParser;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.controller.services.CompaniesService;
 import com.epam.igorpystovit.controller.services.PlanesCompaniesService;
-import com.epam.igorpystovit.controller.services.PlanesCompaniesServiceTest;
 import com.epam.igorpystovit.controller.services.PlanesService;
 import com.epam.igorpystovit.model.entities.FlightsEntity;
 import com.epam.igorpystovit.model.entities.PlaneType;
@@ -91,7 +92,7 @@ public class FlightsDAOImplTest {
         DateTimeParser dateTimeParser = new DateTimeParser();
         flightsDAO.create(testFlight);
         Assumptions.assumeFalse(flightsDAO.getById(4) == null);
-        flightsDAO.updateDateTime(4,"2000-11-11","110023",FlightDateTimeType.ARRIVAL);
+        flightsDAO.updateDateTime(4,"2000-11-11","110023", FlightDateTimeType.ARRIVAL);
         Assertions.assertEquals("2000-11-11",flightsDAO.getById(4).getArrivalDate().toString());
         Assertions.assertEquals(dateTimeParser.timeParser("110023"),flightsDAO.getById(4).getArrivalTime());
         flightsDAO.updateDateTime(4,"2002-08-11","120119",FlightDateTimeType.DEPARTURE);

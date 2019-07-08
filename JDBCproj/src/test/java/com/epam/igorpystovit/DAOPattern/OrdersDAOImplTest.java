@@ -1,7 +1,7 @@
 package com.epam.igorpystovit.DAOPattern;
 
-import com.epam.igorpystovit.DAOPattern.daointerface.OrdersDAO;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.OrdersDAOImpl;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.controller.services.ClientsService;
 import com.epam.igorpystovit.controller.services.FlightsService;
 import com.epam.igorpystovit.model.entities.ClientsEntity;
@@ -10,8 +10,6 @@ import com.epam.igorpystovit.model.entities.OrdersEntity;
 import org.junit.jupiter.api.*;
 
 import java.sql.SQLException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class OrdersDAOImplTest {
     private static ClientsService clientsService = new ClientsService();

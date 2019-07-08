@@ -1,7 +1,7 @@
 package com.epam.igorpystovit.DAOPattern;
 
-import com.epam.igorpystovit.DAOPattern.ClientsDAOImpl;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.ClientsDAOImpl;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.ClientsEntity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

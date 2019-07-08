@@ -1,7 +1,7 @@
 package com.epam.igorpystovit.controller.services;
 
-import com.epam.igorpystovit.DAOPattern.FlightDateTimeType;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.FlightDateTimeType;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.FlightsEntity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assumptions;

@@ -1,4 +1,4 @@
-package com.epam.igorpystovit.DAOPattern;
+package com.epam.igorpystovit.DAOPattern.daoimplementations;
 
 public enum FlightDateTimeType {
     DEPARTURE,

@@ -1,6 +1,6 @@
 package com.epam.igorpystovit.DAOPattern.daointerface;
 
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

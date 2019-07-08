@@ -1,4 +1,4 @@
-package com.epam.igorpystovit;
+package com.epam.igorpystovit.model.datetime;
 
 import java.sql.Date;
 import java.sql.Time;
@@ -36,5 +36,25 @@ public class DateTimeParser {
             date = Date.valueOf(LocalDate.of(years,months,days));
         }
         return date;
+    }
+
+    public static boolean isStringDateParsable(String stringDate){
+        boolean isParsable = true;
+        try{
+            Date.valueOf(stringDate);
+        } catch (IllegalArgumentException e){
+            isParsable = false;
+        }
+        return isParsable;
+    }
+
+    public static boolean isStringTimeParsable(String stringTime){
+        boolean isParsable = true;
+        try{
+            Time.valueOf(stringTime);
+        } catch (IllegalArgumentException e){
+            isParsable = false;
+        }
+        return isParsable;
     }
 }

@@ -1,7 +1,7 @@
 package com.epam.igorpystovit.DAOPattern;
 
-import com.epam.igorpystovit.DAOPattern.PlanesDAOImpl;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.PlanesDAOImpl;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.PlaneType;
 import com.epam.igorpystovit.model.entities.PlanesEntity;
 import org.junit.jupiter.api.Assertions;

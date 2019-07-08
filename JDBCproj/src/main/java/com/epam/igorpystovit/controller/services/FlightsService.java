@@ -1,17 +1,17 @@
 package com.epam.igorpystovit.controller.services;
 
-import com.epam.igorpystovit.DAOPattern.FlightDateTimeType;
-import com.epam.igorpystovit.DAOPattern.FlightsDAOImpl;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.FlightDateTimeType;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.FlightsDAOImpl;
 import com.epam.igorpystovit.DAOPattern.daointerface.FlightsDAO;
-import com.epam.igorpystovit.DateTimeComparator;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.datetime.DateTimeComparator;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.FlightsEntity;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlightsService implements FlightsDAO {
+public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer> {
     private FlightsDAOImpl flightsDAO = new FlightsDAOImpl();
     private CompaniesService companiesDAO = new CompaniesService();
     private TownsService townsDAO = new TownsService();
@@ -67,7 +67,7 @@ public class FlightsService implements FlightsDAO {
     @Override
     public void create(FlightsEntity flight) throws SQLException {
         try{
-            planesCompaniesService.checkIfPresent(flight.getPlaneId());
+            planesCompaniesService.checkIfPresent(flight.getPlaneCompanyId());
             companiesDAO.checkIfPresent(flight.getCompanyId());
             townsDAO.checkIfPresent(flight.getArrivalTownId());
             townsDAO.checkIfPresent(flight.getDepartureTownId());

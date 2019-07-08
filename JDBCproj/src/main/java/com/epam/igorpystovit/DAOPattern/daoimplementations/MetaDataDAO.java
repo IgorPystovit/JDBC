@@ -1,4 +1,4 @@
-package com.epam.igorpystovit.DAOPattern;
+package com.epam.igorpystovit.DAOPattern.daoimplementations;
 
 import com.epam.igorpystovit.model.metadata.ColumnMetaData;
 import com.epam.igorpystovit.model.metadata.ForeignKeyMetaData;

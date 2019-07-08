@@ -1,6 +1,6 @@
 package com.epam.igorpystovit.controller.services;
 
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.ClientsEntity;
 import com.epam.igorpystovit.model.entities.FlightsEntity;
 import com.epam.igorpystovit.model.entities.OrdersEntity;
@@ -55,8 +55,8 @@ class OrdersServiceTest {
                     tempFlight.getArrivalDate().toString(),
                     flightsService.getById(tempFlight.getId()).getArrivalDate().toString());
             assertEquals(
-                    tempFlight.getPlaneId(),
-                    flightsService.getById(tempFlight.getId()).getPlaneId());
+                    tempFlight.getPlaneCompanyId(),
+                    flightsService.getById(tempFlight.getId()).getPlaneCompanyId());
         }
 
         assertDoesNotThrow(() -> clientsService.getById(igor.getId()));
@@ -107,7 +107,7 @@ class OrdersServiceTest {
     @Test
     public void if_there_is_no_available_seats_then_rollback() throws SQLException,NoSuchDataException{
         OrdersService ordersService = new OrdersService();
-        Integer planesCompaniesId = flightsService.getById(5).getPlaneId();
+        Integer planesCompaniesId = flightsService.getById(5).getPlaneCompanyId();
 
         assertDoesNotThrow(() -> flightsService.getById(5));
         assertDoesNotThrow(() -> planesCompaniesService.getById(planesCompaniesId));
@@ -135,7 +135,7 @@ class OrdersServiceTest {
         assertDoesNotThrow(() -> flightsService.getById(10));
         assertDoesNotThrow(() -> clientsService.getById(igor.getId()));
 
-        Integer planesCompaniesId = flightsService.getById(10).getPlaneId();
+        Integer planesCompaniesId = flightsService.getById(10).getPlaneCompanyId();
         PlanesCompaniesEntity oldPlanesCompaniesEntity = planesCompaniesService.getById(planesCompaniesId);
         ClientsEntity oldClientsEntity = clientsService.getById(igor.getId());
         ordersService.create(new OrdersEntity(6,igor.getId(),10));
@@ -224,7 +224,7 @@ class OrdersServiceTest {
 
         assertDoesNotThrow(() -> ordersService.getById(20));
 
-        Integer planesCompaniesId = flightsService.getById(4).getPlaneId();
+        Integer planesCompaniesId = flightsService.getById(4).getPlaneCompanyId();
         PlanesCompaniesEntity planesCompaniesEntity = planesCompaniesService.getById(planesCompaniesId);
         planesCompaniesService.updateSeatNum(planesCompaniesId,0);
 
@@ -244,11 +244,11 @@ class OrdersServiceTest {
         assertThrows(NoSuchDataException.class,() -> ordersService.getById(18));
 
         ClientsEntity oldClientsEntity = clientsService.getById(igor.getId());
-        PlanesCompaniesEntity oldPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(4).getPlaneId());
+        PlanesCompaniesEntity oldPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(4).getPlaneCompanyId());
 
         ordersService.create(new OrdersEntity(18,igor.getId(),4));
 
-        PlanesCompaniesEntity newPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(4).getPlaneId());
+        PlanesCompaniesEntity newPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(4).getPlaneCompanyId());
         ClientsEntity newClientsEntity = clientsService.getById(igor.getId());
 
         assertDoesNotThrow(() -> ordersService.getById(18));
@@ -259,7 +259,7 @@ class OrdersServiceTest {
         assertEquals(oldClientsEntity.getCash() - flightsService.getById(4).getPrice(),
                 newClientsEntity.getCash());
 
-        PlanesCompaniesEntity finalPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(1).getPlaneId());
+        PlanesCompaniesEntity finalPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(1).getPlaneCompanyId());
 
         ordersService.update(new OrdersEntity(18,igor.getId(),1));
 
@@ -269,7 +269,7 @@ class OrdersServiceTest {
         assertEquals(1,ordersService.getById(18).getFlightId());
         assertEquals(newClientsEntity.getCash() - flightsService.getById(1).getPrice(),finalClientsEntity.getCash());
         assertEquals(newPlanesCompaniesEntity.getAvailableSeats() + 1,planesCompaniesService.getById(newPlanesCompaniesEntity.getId()).getAvailableSeats());
-        assertEquals(finalPlanesCompaniesEntity.getAvailableSeats() - 1,planesCompaniesService.getById(flightsService.getById(1).getPlaneId()).getAvailableSeats());
+        assertEquals(finalPlanesCompaniesEntity.getAvailableSeats() - 1,planesCompaniesService.getById(flightsService.getById(1).getPlaneCompanyId()).getAvailableSeats());
     }
 
     @Test
@@ -282,10 +282,10 @@ class OrdersServiceTest {
         clientsService.update(igor);
 
         ClientsEntity oldIgorClientsEntity = clientsService.getById(igor.getId());
-        PlanesCompaniesEntity oldPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(10).getPlaneId());
+        PlanesCompaniesEntity oldPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(10).getPlaneCompanyId());
 
         ordersService.create(new OrdersEntity(17,igor.getId(),10));
-        PlanesCompaniesEntity newPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(10).getPlaneId());
+        PlanesCompaniesEntity newPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(10).getPlaneCompanyId());
         ClientsEntity newIgorClientsEntity = clientsService.getById(igor.getId());
 
         assertEquals(10,ordersService.getById(17).getFlightId());
@@ -296,7 +296,7 @@ class OrdersServiceTest {
 
         ClientsEntity oldBotClientsEntity = clientsService.getById(bot.getId());
         ordersService.update(new OrdersEntity(17,bot.getId(),10));
-        PlanesCompaniesEntity finalPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(10).getPlaneId());
+        PlanesCompaniesEntity finalPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(10).getPlaneCompanyId());
         ClientsEntity newBotClientsEntity = clientsService.getById(bot.getId());
         ClientsEntity finalIgorClientsEntity = clientsService.getById(igor.getId());
 
@@ -314,14 +314,14 @@ class OrdersServiceTest {
         clientsService.update(bot);
 
         ClientsEntity oldClientsEntity = clientsService.getById(bot.getId());
-        PlanesCompaniesEntity oldPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(5).getPlaneId());
+        PlanesCompaniesEntity oldPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(5).getPlaneCompanyId());
 
         assertThrows(NoSuchDataException.class,() -> ordersService.getById(16));
 
         ordersService.create(new OrdersEntity(16,bot.getId(),5));
 
         ClientsEntity newClientsEntity = clientsService.getById(bot.getId());
-        PlanesCompaniesEntity newPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(5).getPlaneId());
+        PlanesCompaniesEntity newPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(5).getPlaneCompanyId());
 
         assertDoesNotThrow(() -> ordersService.getById(16));
         assertEquals(bot.getId(),ordersService.getById(16).getClientId());
@@ -333,7 +333,7 @@ class OrdersServiceTest {
 
 
         ClientsEntity finalClientsEntity = clientsService.getById(bot.getId());
-        PlanesCompaniesEntity finalPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(5).getPlaneId());
+        PlanesCompaniesEntity finalPlanesCompaniesEntity = planesCompaniesService.getById(flightsService.getById(5).getPlaneCompanyId());
 
 
         assertEquals(oldClientsEntity.getCash(),finalClientsEntity.getCash());

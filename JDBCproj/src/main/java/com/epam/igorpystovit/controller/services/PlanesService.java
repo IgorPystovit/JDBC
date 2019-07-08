@@ -1,15 +1,15 @@
 package com.epam.igorpystovit.controller.services;
 
-import com.epam.igorpystovit.DAOPattern.PlanesDAOImpl;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.PlanesDAOImpl;
 import com.epam.igorpystovit.DAOPattern.daointerface.PlanesDAO;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.PlaneType;
 import com.epam.igorpystovit.model.entities.PlanesEntity;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class PlanesService implements PlanesDAO {
+public class PlanesService implements PlanesDAO,Service<PlanesEntity,Integer> {
     private PlanesDAOImpl planesDAO = new PlanesDAOImpl();
 
     @Override

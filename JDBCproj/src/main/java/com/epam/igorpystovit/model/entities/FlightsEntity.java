@@ -1,6 +1,6 @@
 package com.epam.igorpystovit.model.entities;
 
-import com.epam.igorpystovit.DateTimeParser;
+import com.epam.igorpystovit.model.datetime.DateTimeParser;
 import com.epam.igorpystovit.model.Annotations.Column;
 import com.epam.igorpystovit.model.Annotations.PrimaryKey;
 import com.epam.igorpystovit.model.Annotations.Table;
@@ -30,13 +30,13 @@ public class FlightsEntity {
     @Column(name = "price",length = 200)
     private double price;
     @Column(name = "plane_id",length = 200)
-    private int planeId;
+    private int planeCompanyId;
 
     private DateTimeParser dateTimeParser = new DateTimeParser();
 
     public FlightsEntity(){}
-    public FlightsEntity(int id,int companyId,int departureTownId,int arrivalTownId,
-                         String departureDate,String departureTime,String arrivalDate,String arrivalTime,int planeId,double price){
+    public FlightsEntity(int id, int companyId, int departureTownId, int arrivalTownId,
+                         String departureDate, String departureTime, String arrivalDate, String arrivalTime, int planeCompanyId, double price){
         this.id = id;
         this.companyId = companyId;
         this.departureTownId = departureTownId;
@@ -46,7 +46,7 @@ public class FlightsEntity {
         this.arrivalDate = dateTimeParser.dateParser(arrivalDate);
         this.arrivalTime = dateTimeParser.timeParser(arrivalTime);
         this.price = price;
-        this.planeId = planeId;
+        this.planeCompanyId = planeCompanyId;
     }
 
     public void setId(int id) {
@@ -121,12 +121,12 @@ public class FlightsEntity {
         return price;
     }
 
-    public int getPlaneId() {
-        return planeId;
+    public int getPlaneCompanyId() {
+        return planeCompanyId;
     }
 
-    public void setPlaneId(int planeId) {
-        this.planeId = planeId;
+    public void setPlaneCompanyId(int planeCompanyId) {
+        this.planeCompanyId = planeCompanyId;
     }
 
     @Override
@@ -135,7 +135,7 @@ public class FlightsEntity {
 
         sb.append("id = "+id+"\t"+" Company id = "+companyId+"\t"+" Departure town id = "+departureTownId+"\t"+
                 " Arrival town id = "+arrivalTownId+"\t"+" Departure date = "+departureDate+"\t"+" Departure time = "+departureTime+"\t"+
-                " Arrival date = "+arrivalDate+"\t"+" Arrival time = "+arrivalTime+"\t"+" Plane id = "+planeId+"\t"+" Price = "+price);
+                " Arrival date = "+arrivalDate+"\t"+" Arrival time = "+arrivalTime+"\t"+" Plane id = "+ planeCompanyId +"\t"+" Price = "+price);
         return sb.toString();
     }
 }

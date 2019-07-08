@@ -1,8 +1,8 @@
 package com.epam.igorpystovit.controller.services;
 
-import com.epam.igorpystovit.DAOPattern.OrdersDAOImpl;
+import com.epam.igorpystovit.DAOPattern.daoimplementations.OrdersDAOImpl;
 import com.epam.igorpystovit.DAOPattern.daointerface.OrdersDAO;
-import com.epam.igorpystovit.NoSuchDataException;
+import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.ClientsEntity;
 import com.epam.igorpystovit.model.entities.FlightsEntity;
 import com.epam.igorpystovit.model.entities.OrdersEntity;
@@ -11,7 +11,7 @@ import com.epam.igorpystovit.model.entities.PlanesCompaniesEntity;
 import java.sql.SQLException;
 import java.util.List;
 
-public class OrdersService implements OrdersDAO {
+public class OrdersService implements OrdersDAO,Service<OrdersEntity,Integer> {
     private OrdersDAOImpl ordersDAO = new OrdersDAOImpl();
     private FlightsService flightsService = new FlightsService();
     private ClientsService clientsService = new ClientsService();
@@ -35,13 +35,13 @@ public class OrdersService implements OrdersDAO {
             ClientsEntity client = clientsService.getById(order.getClientId());
             FlightsEntity flight = flightsService.getById(order.getFlightId());
             if (isFundsSufficient(client,flight)){
-                if (isSeatsAvailable(planesCompaniesService.getById(flight.getPlaneId()))){
+                if (isSeatsAvailable(planesCompaniesService.getById(flight.getPlaneCompanyId()))){
                     double clientCash = client.getCash();
                     double flightPrice = flight.getPrice();
                     client.setCash(clientCash - flightPrice);
                     clientsService.update(client);
-                    int availableSeats = planesCompaniesService.getById(flight.getPlaneId()).getAvailableSeats();
-                    planesCompaniesService.updateSeatNum(flight.getPlaneId(),availableSeats-1);
+                    int availableSeats = planesCompaniesService.getById(flight.getPlaneCompanyId()).getAvailableSeats();
+                    planesCompaniesService.updateSeatNum(flight.getPlaneCompanyId(),availableSeats-1);
                     ordersDAO.create(order);
                 }
                 else{
@@ -90,12 +90,12 @@ public class OrdersService implements OrdersDAO {
             ClientsEntity client = clientsService.getById(order.getClientId());
             FlightsEntity oldFlight = flightsService.getById(order.getFlightId());
             FlightsEntity newFlight = flightsService.getById(newFlightId);
-            if (isFundsSufficient(client,oldFlight) && isSeatsAvailable(planesCompaniesService.getById(newFlight.getPlaneId()))){
+            if (isFundsSufficient(client,oldFlight) && isSeatsAvailable(planesCompaniesService.getById(newFlight.getPlaneCompanyId()))){
                 double clientCash = client.getCash();
                 double price = newFlight.getPrice();
                 client.setCash(clientCash - price);
-                PlanesCompaniesEntity oldPlanesCompaniesEntity = planesCompaniesService.getById(oldFlight.getPlaneId());
-                PlanesCompaniesEntity newPlanesCompaniesEntity = planesCompaniesService.getById(newFlight.getPlaneId());
+                PlanesCompaniesEntity oldPlanesCompaniesEntity = planesCompaniesService.getById(oldFlight.getPlaneCompanyId());
+                PlanesCompaniesEntity newPlanesCompaniesEntity = planesCompaniesService.getById(newFlight.getPlaneCompanyId());
                 planesCompaniesService.updateSeatNum(oldPlanesCompaniesEntity.getId(),oldPlanesCompaniesEntity.getAvailableSeats() + 1);
                 planesCompaniesService.updateSeatNum(newPlanesCompaniesEntity.getId(),newPlanesCompaniesEntity.getAvailableSeats() - 1);
                 clientsService.update(client);
@@ -137,7 +137,7 @@ public class OrdersService implements OrdersDAO {
         OrdersEntity order = ordersDAO.getById(id);
         ClientsEntity client = clientsService.getById(order.getClientId());
         FlightsEntity flight = flightsService.getById(order.getFlightId());
-        PlanesCompaniesEntity planesCompaniesEntity = planesCompaniesService.getById(flight.getPlaneId());
+        PlanesCompaniesEntity planesCompaniesEntity = planesCompaniesService.getById(flight.getPlaneCompanyId());
         planesCompaniesService.updateSeatNum(planesCompaniesEntity.getId(),planesCompaniesEntity.getAvailableSeats() + 1);
         client.setCash(client.getCash() + flight.getPrice());
         clientsService.update(client);
