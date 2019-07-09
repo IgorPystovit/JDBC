@@ -2,6 +2,7 @@ package com.epam.igorpystovit.DAOPattern.daoimplementations;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.PlanesDAO;
 import com.epam.igorpystovit.model.NoSuchDataException;
+import com.epam.igorpystovit.model.Reader;
 import com.epam.igorpystovit.model.transformer.Transformer;
 import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
 import com.epam.igorpystovit.model.entities.PlaneType;
@@ -89,7 +90,7 @@ public class PlanesDAOImpl implements PlanesDAO {
             updateStatement.setInt(4,updatePlaneId);
             updateStatement.execute();
         } catch (NoSuchDataException e){
-            logger.error("A row you are trying to update does not exist");
+            logger.error("A row you are trying to updateEntity does not exist");
             throw e;
         }
     }
@@ -105,7 +106,7 @@ public class PlanesDAOImpl implements PlanesDAO {
             updateStatement.setInt(4,plane.getId());
             updateStatement.execute();
         } catch (NoSuchDataException e){
-            logger.error("A row you are trying to update does not exist");
+            logger.error("A row you are trying to updateEntity does not exist");
             throw e;
         }
     }
@@ -120,6 +121,11 @@ public class PlanesDAOImpl implements PlanesDAO {
             logger.error("A row you are trying to delete does not exist");
             throw e;
         }
+    }
+
+    @Override
+    public Integer readId() {
+        return Reader.readInt();
     }
 
 }

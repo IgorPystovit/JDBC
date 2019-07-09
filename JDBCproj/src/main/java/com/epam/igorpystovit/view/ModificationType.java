@@ -1,5 +1,9 @@
 package com.epam.igorpystovit.view;
 
 public enum  ModificationType {
-    CREATE;
+    CREATE,
+    READ,
+    READ_ALL,
+    UPDATE,
+    DELETE;
 }

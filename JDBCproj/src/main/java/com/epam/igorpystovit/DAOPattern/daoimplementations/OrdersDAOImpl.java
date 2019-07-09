@@ -2,6 +2,7 @@ package com.epam.igorpystovit.DAOPattern.daoimplementations;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.OrdersDAO;
 import com.epam.igorpystovit.model.NoSuchDataException;
+import com.epam.igorpystovit.model.Reader;
 import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
 import com.epam.igorpystovit.model.entities.OrdersEntity;
 import com.epam.igorpystovit.model.transformer.Transformer;
@@ -15,8 +16,8 @@ public class OrdersDAOImpl implements OrdersDAO {
     private final String SELECT_BY_ID = "select * from Orders where id = ?";
     private final String INSERT = "insert Orders(id,client_id,flight_id) values(?,?,?)";
     private final String UPDATE = "update Orders set client_id = ?,flight_id = ? where id = ?";
-    private final String UPDATE_FLIGHT = "update Orders set flight_id = ? where id = ?";
-    private final String UPDATE_CLIENT = "update Orders set client_id = ? where id = ?";
+    private final String UPDATE_FLIGHT = "updateEntity Orders set flight_id = ? where id = ?";
+    private final String UPDATE_CLIENT = "updateEntity Orders set client_id = ? where id = ?";
     private final String DELETE = "delete from Orders where id = ?";
 
     private Transformer transformer = new Transformer<>(OrdersEntity.class);
@@ -79,7 +80,7 @@ public class OrdersDAOImpl implements OrdersDAO {
             updateStatement.setInt(3,order.getId());
             updateStatement.execute();
         } catch (NoSuchDataException e){
-            logger.error("A row you are trying to update does not exist");
+            logger.error("A row you are trying to updateEntity does not exist");
             throw e;
         }
     }
@@ -95,5 +96,11 @@ public class OrdersDAOImpl implements OrdersDAO {
             logger.error("A row you are trying to delete does not exist");
             throw e;
         }
+    }
+
+
+    @Override
+    public Integer readId() {
+        return Reader.readInt();
     }
 }

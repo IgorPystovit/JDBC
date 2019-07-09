@@ -10,15 +10,16 @@ public class MainMenu implements Menu{
         Map<Integer,String> menuItems = new LinkedHashMap<>(){{
            put(1,"To edit tables");
            put(2,"To print table's content");
-           put(3,"To book the flight");
-           put(4,"To cancel reservation");
         }};
         return menuItems;
     }
 
     @Override
     public Map<Integer, Runnable> getMenuActions() {
-
-        return null;
+        Map<Integer,Runnable> menuActions = new LinkedHashMap<>(){{
+            put(1,() -> new TablesMenu().launch());
+            put(2,() -> new TablesPrinterMenu<>().launch());
+        }};
+        return menuActions;
     }
 }

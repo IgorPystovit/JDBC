@@ -3,11 +3,11 @@ package com.epam.igorpystovit.model.entityfactory;
 import com.epam.igorpystovit.model.Reader;
 import com.epam.igorpystovit.model.entities.FlightsEntity;
 
-public class FlightsEntityFactory extends EntityFactory<FlightsEntity> {
+public class FlightsEntityFactory extends EntityFactory<FlightsEntity,Integer> {
     @Override
-    protected FlightsEntity createEntity() {
-        logger.info("Input flight id:");
-        int id = Reader.readInt();
+    protected FlightsEntity create(Integer id) {
+//        logger.info("Input flight id:");
+//        int id = Reader.readInt();
         logger.info("Input company id , that provides the flight:");
         int companyId = Reader.readInt();
         logger.info("Input departure town id:");

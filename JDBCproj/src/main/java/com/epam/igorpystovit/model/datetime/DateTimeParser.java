@@ -22,7 +22,7 @@ public class DateTimeParser {
         return time;
     }
 
-    public Date dateParser(String stringDate){
+    public Date dateParser(String stringDate) throws IllegalArgumentException{
         Date date = null;
         if ((stringDate.length() != 8) && (stringDate.length() != 10)){
             throw new IllegalArgumentException();
@@ -41,7 +41,7 @@ public class DateTimeParser {
     public static boolean isStringDateParsable(String stringDate){
         boolean isParsable = true;
         try{
-            Date.valueOf(stringDate);
+            new DateTimeParser().dateParser(stringDate);
         } catch (IllegalArgumentException e){
             isParsable = false;
         }
@@ -51,7 +51,7 @@ public class DateTimeParser {
     public static boolean isStringTimeParsable(String stringTime){
         boolean isParsable = true;
         try{
-            Time.valueOf(stringTime);
+            new DateTimeParser().timeParser(stringTime);
         } catch (IllegalArgumentException e){
             isParsable = false;
         }

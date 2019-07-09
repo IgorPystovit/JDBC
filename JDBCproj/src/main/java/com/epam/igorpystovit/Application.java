@@ -8,6 +8,7 @@ import com.epam.igorpystovit.controller.services.PlanesService;
 import com.epam.igorpystovit.model.Reader;
 import com.epam.igorpystovit.model.datetime.DateTimeParser;
 import com.epam.igorpystovit.model.entities.*;
+import com.epam.igorpystovit.view.MainMenu;
 
 import java.util.regex.Pattern;
 
@@ -21,13 +22,8 @@ public class Application {
     private static CompaniesEntity company = new CompaniesEntity(2,"Lufthansa");
 
     public static void main(String[] args) {
-        FlightsService flightsService = new FlightsService();
-        PlanesService planesService = new PlanesService();
-        OrdersDAOImpl ordersDAO = new OrdersDAOImpl();
-        CompaniesService companiesService = new CompaniesService();
-        PlanesCompaniesDAOImpl planesCompaniesDAO = new PlanesCompaniesDAOImpl();
         try{
-            PlaneType.valueOf(Reader.readString());
+            new MainMenu().launch();
         } catch (Exception  e){
             e.printStackTrace();
         }

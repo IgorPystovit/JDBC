@@ -2,6 +2,7 @@ package com.epam.igorpystovit.DAOPattern.daoimplementations;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.TownsDAO;
 import com.epam.igorpystovit.model.NoSuchDataException;
+import com.epam.igorpystovit.model.Reader;
 import com.epam.igorpystovit.model.transformer.Transformer;
 import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
 import com.epam.igorpystovit.model.entities.TownsEntity;
@@ -113,5 +114,11 @@ public class TownsDAOImpl implements TownsDAO{
             townsEntities.add((TownsEntity) transformer.transformFromResultSet(resultSet));
         }
         return townsEntities;
+    }
+
+
+    @Override
+    public Integer readId() {
+        return Reader.readInt();
     }
 }

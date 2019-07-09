@@ -3,15 +3,18 @@ package com.epam.igorpystovit.controller.services;
 import com.epam.igorpystovit.DAOPattern.daoimplementations.PlanesCompaniesDAOImpl;
 import com.epam.igorpystovit.DAOPattern.daointerface.PlanesCompaniesDAO;
 import com.epam.igorpystovit.model.NoSuchDataException;
+import com.epam.igorpystovit.model.entities.FlightsEntity;
 import com.epam.igorpystovit.model.entities.PlanesCompaniesEntity;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlanesCompaniesService implements PlanesCompaniesDAO,Service<PlanesCompaniesEntity,Integer> {
-    private PlanesService planesService = new PlanesService();
-    private CompaniesService companiesService = new CompaniesService();
-    private PlanesCompaniesDAOImpl planesCompaniesDAO = new PlanesCompaniesDAOImpl();
+    private static final PlanesService planesService = new PlanesService();
+    private static final CompaniesService companiesService = new CompaniesService();
+    private static final PlanesCompaniesDAOImpl planesCompaniesDAO = new PlanesCompaniesDAOImpl();
+    private static final FlightsService flightsService = new FlightsService();
 
     @Override
     public List<PlanesCompaniesEntity> getAll() throws SQLException {
@@ -58,6 +61,10 @@ public class PlanesCompaniesService implements PlanesCompaniesDAO,Service<Planes
 
     @Override
     public void delete(Integer id) throws SQLException, NoSuchDataException {
+        List<FlightsEntity> flightsEntitiesOnTheTable = getFlightsEntitiesByPlanesCompaniesId(id);
+        for (FlightsEntity flightsEntity : flightsEntitiesOnTheTable){
+            flightsService.delete(flightsEntity.getId());
+        }
         planesCompaniesDAO.delete(id);
     }
 
@@ -82,4 +89,21 @@ public class PlanesCompaniesService implements PlanesCompaniesDAO,Service<Planes
         }
         return seatNum;
     }
+
+    @Override
+    public Integer readId() {
+        return planesCompaniesDAO.readId();
+    }
+
+    //Constraints
+    private List<FlightsEntity> getFlightsEntitiesByPlanesCompaniesId(Integer planesCompaniesId) throws SQLException{
+        List<FlightsEntity> flightsEntities = flightsService.getAll();
+        for (FlightsEntity flightsEntity : new ArrayList<>(flightsEntities)){
+            if (flightsEntity.getPlaneCompanyId() != planesCompaniesId){
+                flightsEntities.remove(flightsEntity);
+            }
+        }
+        return flightsEntities;
+    }
 }
+

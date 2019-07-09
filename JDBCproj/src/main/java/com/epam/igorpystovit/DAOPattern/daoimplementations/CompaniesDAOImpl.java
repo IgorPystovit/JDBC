@@ -2,6 +2,7 @@ package com.epam.igorpystovit.DAOPattern.daoimplementations;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.CompaniesDAO;
 import com.epam.igorpystovit.model.NoSuchDataException;
+import com.epam.igorpystovit.model.Reader;
 import com.epam.igorpystovit.model.transformer.Transformer;
 import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
 import com.epam.igorpystovit.model.entities.CompaniesEntity;
@@ -115,4 +116,9 @@ public class CompaniesDAOImpl implements CompaniesDAO{
         }
     }
 
+
+    @Override
+    public Integer readId() {
+        return Reader.readInt();
+    }
 }

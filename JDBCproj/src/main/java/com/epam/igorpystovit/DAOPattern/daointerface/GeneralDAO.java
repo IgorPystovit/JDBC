@@ -20,6 +20,8 @@ public interface GeneralDAO<T, ID> {
 
     void delete(ID id) throws SQLException, NoSuchDataException;
 
+    ID readId();
+
     default void checkIfPresent(ID id) throws SQLException,NoSuchDataException{
         getById(id);
     }

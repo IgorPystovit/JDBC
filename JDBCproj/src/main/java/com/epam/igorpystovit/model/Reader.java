@@ -50,14 +50,10 @@ public class Reader {
     public static String readDateString(){
         String stringDate = "";
         do{
-            try{
-                stringDate = readString();
-                Long.parseLong(stringDate);
-            } catch (NumberFormatException e){
-                if (!DateTimeParser.isStringDateParsable(stringDate)){
-                    logger.error("Bad date input");
-                    continue;
-                }
+            stringDate = Reader.readString();
+            if (!DateTimeParser.isStringDateParsable(stringDate)){
+                logger.error("Bad date input");
+                continue;
             }
             break;
         } while (true);
@@ -67,14 +63,10 @@ public class Reader {
     public static String readTimeString(){
         String stringTime = "";
         do{
-            try{
-                stringTime = readString();
-                Long.parseLong(stringTime);
-            } catch (NumberFormatException e){
-                if (!DateTimeParser.isStringTimeParsable(stringTime)){
-                    logger.error("Bad time input");
-                    continue;
-                }
+            stringTime = Reader.readString();
+            if (!DateTimeParser.isStringTimeParsable(stringTime)){
+                logger.error("Bad time input");
+                continue;
             }
             break;
         }while (true);

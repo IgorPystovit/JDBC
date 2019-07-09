@@ -15,6 +15,7 @@ public interface Menu {
         Map<Integer,String> menuItems = getMenuItems();
         Map<Integer,Runnable> menuActions = getMenuActions();
 
+        menuItems.put(0,"To exit");
         menuActions.put(0,() -> logger.info("Bye"));
 
         int requestId;

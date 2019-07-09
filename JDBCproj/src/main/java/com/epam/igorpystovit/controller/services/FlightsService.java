@@ -6,16 +6,19 @@ import com.epam.igorpystovit.DAOPattern.daointerface.FlightsDAO;
 import com.epam.igorpystovit.model.datetime.DateTimeComparator;
 import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.FlightsEntity;
+import com.epam.igorpystovit.model.entities.OrdersEntity;
+import com.epam.igorpystovit.model.entities.PlanesCompaniesEntity;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer> {
-    private FlightsDAOImpl flightsDAO = new FlightsDAOImpl();
-    private CompaniesService companiesDAO = new CompaniesService();
-    private TownsService townsDAO = new TownsService();
-    private PlanesCompaniesService planesCompaniesService = new PlanesCompaniesService();
+    private static final FlightsDAOImpl flightsDAO = new FlightsDAOImpl();
+    private static final CompaniesService companiesDAO = new CompaniesService();
+    private static final TownsService townsDAO = new TownsService();
+    private static final PlanesCompaniesService planesCompaniesService = new PlanesCompaniesService();
+    private static final OrdersService ordersService = new OrdersService();
 
     private class FlightKey{
         private int companyId;
@@ -72,6 +75,13 @@ public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer>
             townsDAO.checkIfPresent(flight.getArrivalTownId());
             townsDAO.checkIfPresent(flight.getDepartureTownId());
 
+            if (flight.getArrivalTownId() == flight.getDepartureTownId()){
+                logger.error("Arrival and departure town are the same");
+            }
+            if (!ifPlaneIsOwnedByTheCompany(flight.getPlaneCompanyId(),flight.getCompanyId())){
+                logger.error("Plane with such id is not owned by this company");
+                return;
+            }
             if (checkIfFlightDateTimePresent(flight)){
                 logger.error("You are trying to insert duplicate row");
                 return;
@@ -113,6 +123,12 @@ public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer>
             companiesDAO.checkIfPresent(flight.getCompanyId());
             townsDAO.checkIfPresent(flight.getArrivalTownId());
             townsDAO.checkIfPresent(flight.getDepartureTownId());
+            planesCompaniesService.checkIfPresent(flight.getPlaneCompanyId());
+
+            if (!ifPlaneIsOwnedByTheCompany(flight.getPlaneCompanyId(),flight.getCompanyId())){
+                logger.error("Plane with such id is not owned by this company");
+                return;
+            }
             if (checkIfFlightDateTimePresent(flight)){
                 logger.error("You are trying to insert duplicate row");
                 return;
@@ -131,7 +147,21 @@ public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer>
 
     @Override
     public void delete(Integer id) throws SQLException, NoSuchDataException {
+        List<OrdersEntity> ordersEntitiesOnTheTable = getOrdersEntitiesByFlightId(id);
+        for (OrdersEntity ordersEntity : ordersEntitiesOnTheTable){
+            ordersService.delete(ordersEntity.getId());
+        }
         flightsDAO.delete(id);
+    }
+
+    @Override
+    public Integer readId() {
+        return flightsDAO.readId();
+    }
+
+    private boolean ifPlaneIsOwnedByTheCompany(Integer planesCompaniesId,Integer companyId) throws NoSuchDataException,SQLException{
+        PlanesCompaniesEntity planesCompaniesEntity = planesCompaniesService.getById(planesCompaniesId);
+        return planesCompaniesEntity.getCompanyId() == companyId;
     }
 
     private boolean checkIfFlightDateTimePresent(FlightsEntity newFlight) throws SQLException{
@@ -164,4 +194,14 @@ public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer>
         return flights;
     }
 
+    //Constraints
+    private List<OrdersEntity> getOrdersEntitiesByFlightId(Integer flightId) throws SQLException{
+        List<OrdersEntity> ordersEntities = ordersService.getAll();
+        for (OrdersEntity ordersEntity : ordersEntities){
+            if (ordersEntity.getFlightId() != flightId){
+                ordersEntities.remove(ordersEntity);
+            }
+        }
+        return ordersEntities;
+    }
 }

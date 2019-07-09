@@ -12,10 +12,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class OrdersService implements OrdersDAO,Service<OrdersEntity,Integer> {
-    private OrdersDAOImpl ordersDAO = new OrdersDAOImpl();
-    private FlightsService flightsService = new FlightsService();
-    private ClientsService clientsService = new ClientsService();
-    private PlanesCompaniesService planesCompaniesService = new PlanesCompaniesService();
+    private static final OrdersDAOImpl ordersDAO = new OrdersDAOImpl();
+    private static final FlightsService flightsService = new FlightsService();
+    private static final ClientsService clientsService = new ClientsService();
+    private static final PlanesCompaniesService planesCompaniesService = new PlanesCompaniesService();
 
     @Override
     public List<OrdersEntity> getAll() throws SQLException {
@@ -149,5 +149,10 @@ public class OrdersService implements OrdersDAO,Service<OrdersEntity,Integer> {
     }
     private boolean isFundsSufficient(ClientsEntity client, FlightsEntity flight){
         return client.getCash() > flight.getPrice();
+    }
+
+    @Override
+    public Integer readId() {
+        return ordersDAO.readId();
     }
 }

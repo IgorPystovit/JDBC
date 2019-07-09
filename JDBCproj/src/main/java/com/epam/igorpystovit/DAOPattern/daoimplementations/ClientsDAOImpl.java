@@ -2,6 +2,7 @@ package com.epam.igorpystovit.DAOPattern.daoimplementations;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.ClientsDAO;
 import com.epam.igorpystovit.model.NoSuchDataException;
+import com.epam.igorpystovit.model.Reader;
 import com.epam.igorpystovit.model.transformer.Transformer;
 import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
 import com.epam.igorpystovit.model.entities.ClientsEntity;
@@ -15,7 +16,7 @@ public class ClientsDAOImpl implements ClientsDAO {
     private final String SELECT_BY_ID = "select * from Clients where id = ?";
     private final String INSERT = "insert Clients(id,name,surname,cash) values(?,?,?,?)";
     private final String UPDATE = "update Clients set name = ? , surname = ? , cash = ? where id = ?";
-    private final String UPDATE_CASH = "update Clients set cash = ? where id = ?";
+    private final String UPDATE_CASH = "updateEntity Clients set cash = ? where id = ?";
     private final String DELETE = "delete from Clients where id = ?";
     private final Connection DBCONNECTION;
     private final Transformer<ClientsEntity> transformer = new Transformer<>(ClientsEntity.class);
@@ -54,6 +55,7 @@ public class ClientsDAOImpl implements ClientsDAO {
     public void create(ClientsEntity clientsEntity) throws SQLException{
         try{
             checkIfPresent(clientsEntity.getId());
+            logger.error("You are trying to insert duplicate key");
         } catch (NoSuchDataException e){
             PreparedStatement createStatement = DBCONNECTION.prepareStatement(INSERT);
             createStatement.setInt(1,clientsEntity.getId());
@@ -62,12 +64,12 @@ public class ClientsDAOImpl implements ClientsDAO {
             createStatement.setDouble(4,clientsEntity.getCash());
             createStatement.execute();
         }
-        logger.error("You are trying to insert duplicate key");
     }
 
     public void create(Integer id,String name,String surname,double cash) throws SQLException{
         try{
             checkIfPresent(id);
+            logger.error("You are trying to insert duplicate key");
         } catch (NoSuchDataException e){
             PreparedStatement createStatement = DBCONNECTION.prepareStatement(INSERT);
             createStatement.setInt(1,id);
@@ -76,7 +78,6 @@ public class ClientsDAOImpl implements ClientsDAO {
             createStatement.setDouble(4,cash);
             createStatement.execute();
         }
-        logger.error("You are trying to insert duplicate key");
     }
 
     @Override
@@ -105,7 +106,7 @@ public class ClientsDAOImpl implements ClientsDAO {
             updateStatement.setInt(4,updateClientId);
             updateStatement.execute();
         } catch (NoSuchDataException e){
-            logger.error("A row you are trying to update does not exist");
+            logger.error("A row you are trying to updateEntity does not exist");
             throw e;
         }
     }
@@ -121,5 +122,10 @@ public class ClientsDAOImpl implements ClientsDAO {
             logger.error("A row you are trying to delete does not exist");
             throw e;
         }
+    }
+
+    @Override
+    public Integer readId() {
+        return Reader.readInt();
     }
 }

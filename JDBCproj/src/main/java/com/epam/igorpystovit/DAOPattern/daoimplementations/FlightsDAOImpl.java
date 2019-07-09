@@ -1,6 +1,7 @@
 package com.epam.igorpystovit.DAOPattern.daoimplementations;
 
 import com.epam.igorpystovit.DAOPattern.daointerface.FlightsDAO;
+import com.epam.igorpystovit.model.Reader;
 import com.epam.igorpystovit.model.datetime.DateTimeParser;
 import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.connectionmanager.ConnectionManager;
@@ -108,7 +109,7 @@ public class FlightsDAOImpl implements FlightsDAO {
             updateStatement.setInt(10,flight.getId());
             updateStatement.execute();
         } catch (NoSuchDataException e){
-            logger.error("A row you are trying to update does not exist");
+            logger.error("A row you are trying to updateEntity does not exist");
             throw e;
         }
     }
@@ -133,7 +134,7 @@ public class FlightsDAOImpl implements FlightsDAO {
             dateTimeUpdateStatement.setInt(3,updateFlightId);
             dateTimeUpdateStatement.execute();
         } catch (NoSuchDataException e){
-            logger.error("A row you are trying to update does not exist");
+            logger.error("A row you are trying to updateEntity does not exist");
             throw e;
         }
     }
@@ -147,8 +148,13 @@ public class FlightsDAOImpl implements FlightsDAO {
             priceUpdateStatement.setInt(2,updateFlightId);
             priceUpdateStatement.execute();
         } catch (NoSuchDataException e){
-            logger.error("A row you are trying to update does not exist");
+            logger.error("A row you are trying to updateEntity does not exist");
             throw e;
         }
+    }
+
+    @Override
+    public Integer readId() {
+        return Reader.readInt();
     }
 }
