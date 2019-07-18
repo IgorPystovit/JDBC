@@ -656,3 +656,5 @@ ERROR | 09-07-2019 | 12:00:21 | com.epam.igorpystovit.model.Reader -> 'Bad date 
 ERROR | 09-07-2019 | 12:01:39 | com.epam.igorpystovit.model.Reader -> 'Bad date input'  
 ERROR | 09-07-2019 | 12:02:05 | com.epam.igorpystovit.model.Reader -> 'Bad date input'  
 ERROR | 09-07-2019 | 12:03:52 | com.epam.igorpystovit.model.Reader -> 'Bad time input'  
+ERROR | 18-07-2019 | 12:52:18 | com.epam.igorpystovit.DAOPattern.daointerface.GeneralDAO -> 'This plain is already be taken'  
+ERROR | 18-07-2019 | 12:54:55 | com.epam.igorpystovit.DAOPattern.daointerface.GeneralDAO -> 'This plane is already be taken'  

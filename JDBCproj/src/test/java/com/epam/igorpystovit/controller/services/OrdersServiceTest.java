@@ -22,15 +22,15 @@ class OrdersServiceTest {
     private static PlanesCompaniesService planesCompaniesService = new PlanesCompaniesService();
 
     private static List<FlightsEntity> flights = new ArrayList<>(Arrays.asList(
-            new FlightsEntity(4,1,1,2,"2019-06-19","11:00:00",
+            new FlightsEntity(4,1,2,"2019-06-19","11:00:00",
                             "2019-06-20","19:30:00",2,3000),
-            new FlightsEntity(1,1,2,3,"2019-11-09","09:30:00",
+            new FlightsEntity(1,2,3,"2019-11-09","09:30:00",
                             "2019-11-09","11:00:00",1,1900),
-            new FlightsEntity(5,1,1,2,"2019-11-09","09:30:00",
+            new FlightsEntity(5,1,2,"2019-11-09","09:30:00",
                             "2019-11-09","11:00:00",2,2900),
-            new FlightsEntity(10,1,1,3,"2020-02-03","20:00:00",
+            new FlightsEntity(10,1,3,"2020-02-03","20:00:00",
                             "2020-02-04","11:00:00",1,2000),
-            new FlightsEntity(12,1,1,3,"2020-04-06","17:00:00",
+            new FlightsEntity(12,1,3,"2020-04-06","17:00:00",
                             "2020-04-06","13:00:00",3,1500)));
     private static ClientsEntity igor = new ClientsEntity(1,"Igor","Pystovit",110000);
     private static ClientsEntity bot = new ClientsEntity(2,"bot"," ",128000);

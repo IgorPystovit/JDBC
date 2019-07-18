@@ -3,11 +3,9 @@ package com.epam.igorpystovit.controller.services;
 import com.epam.igorpystovit.DAOPattern.daoimplementations.FlightDateTimeType;
 import com.epam.igorpystovit.DAOPattern.daoimplementations.FlightsDAOImpl;
 import com.epam.igorpystovit.DAOPattern.daointerface.FlightsDAO;
-import com.epam.igorpystovit.model.datetime.DateTimeComparator;
 import com.epam.igorpystovit.model.NoSuchDataException;
 import com.epam.igorpystovit.model.entities.FlightsEntity;
 import com.epam.igorpystovit.model.entities.OrdersEntity;
-import com.epam.igorpystovit.model.entities.PlanesCompaniesEntity;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,43 +17,6 @@ public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer>
     private static final TownsService townsDAO = new TownsService();
     private static final PlanesCompaniesService planesCompaniesService = new PlanesCompaniesService();
     private static final OrdersService ordersService = new OrdersService();
-
-    private class FlightKey{
-        private int companyId;
-        private int arrivalTownId;
-        private int departureTownId;
-
-        public FlightKey(){}
-        public FlightKey(int companyId,int departureTownId,int arrivalTownId){
-            this.companyId = companyId;
-            this.departureTownId = departureTownId;
-            this.arrivalTownId = arrivalTownId;
-        }
-
-        public void setCompanyId(int companyId) {
-            this.companyId = companyId;
-        }
-
-        public int getCompanyId() {
-            return companyId;
-        }
-
-        public void setArrivalTownId(int arrivalTownId) {
-            this.arrivalTownId = arrivalTownId;
-        }
-
-        public int getArrivalTownId() {
-            return arrivalTownId;
-        }
-
-        public void setDepartureTownId(int departureTownId) {
-            this.departureTownId = departureTownId;
-        }
-
-        public int getDepartureTownId() {
-            return departureTownId;
-        }
-    }
 
     @Override
     public List<FlightsEntity> getAll() throws SQLException {
@@ -71,19 +32,16 @@ public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer>
     public void create(FlightsEntity flight) throws SQLException {
         try{
             planesCompaniesService.checkIfPresent(flight.getPlaneCompanyId());
-            companiesDAO.checkIfPresent(flight.getCompanyId());
             townsDAO.checkIfPresent(flight.getArrivalTownId());
             townsDAO.checkIfPresent(flight.getDepartureTownId());
 
             if (flight.getArrivalTownId() == flight.getDepartureTownId()){
                 logger.error("Arrival and departure town are the same");
-            }
-            if (!ifPlaneIsOwnedByTheCompany(flight.getPlaneCompanyId(),flight.getCompanyId())){
-                logger.error("Plane with such id is not owned by this company");
                 return;
             }
-            if (checkIfFlightDateTimePresent(flight)){
-                logger.error("You are trying to insert duplicate row");
+
+            if (isPlaneCompanyPresent(flight.getPlaneCompanyId())){
+                logger.error("This plain is already be taken");
                 return;
             }
         } catch (NoSuchDataException e){
@@ -109,29 +67,22 @@ public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer>
                 logger.error("No such dateTimeType");
                 return;
         }
-
-        if (checkIfFlightDateTimePresent(newFlightEntity)){
-            logger.error("You are trying to insert duplicate row");
-            return;
-        }
         flightsDAO.updateDateTime(updateFlightId,newDate,newTime,dateTimeType);
     }
 
     @Override
     public void update(FlightsEntity flight) throws SQLException, NoSuchDataException {
         try{
-            companiesDAO.checkIfPresent(flight.getCompanyId());
             townsDAO.checkIfPresent(flight.getArrivalTownId());
             townsDAO.checkIfPresent(flight.getDepartureTownId());
             planesCompaniesService.checkIfPresent(flight.getPlaneCompanyId());
-
-            if (!ifPlaneIsOwnedByTheCompany(flight.getPlaneCompanyId(),flight.getCompanyId())){
-                logger.error("Plane with such id is not owned by this company");
-                return;
-            }
-            if (checkIfFlightDateTimePresent(flight)){
-                logger.error("You are trying to insert duplicate row");
-                return;
+            flightsDAO.checkIfPresent(flight.getId());
+            FlightsEntity oldFlight  = getById(flight.getId());
+            if (oldFlight.getPlaneCompanyId() != flight.getPlaneCompanyId()){
+                if (isPlaneCompanyPresent(flight.getPlaneCompanyId())){
+                    logger.error("This plane is already be taken");
+                    return;
+                }
             }
         } catch (NoSuchDataException e){
             logger.error("An error occurs while updating data! Please check insert parameters");
@@ -159,39 +110,14 @@ public class FlightsService implements FlightsDAO,Service<FlightsEntity,Integer>
         return flightsDAO.readId();
     }
 
-    private boolean ifPlaneIsOwnedByTheCompany(Integer planesCompaniesId,Integer companyId) throws NoSuchDataException,SQLException{
-        PlanesCompaniesEntity planesCompaniesEntity = planesCompaniesService.getById(planesCompaniesId);
-        return planesCompaniesEntity.getCompanyId() == companyId;
-    }
-
-    private boolean checkIfFlightDateTimePresent(FlightsEntity newFlight) throws SQLException{
-        boolean present = false;
-        FlightKey flightKey = new FlightKey(newFlight.getCompanyId(),newFlight.getDepartureTownId(),newFlight.getArrivalTownId());
-        List<FlightsEntity> flights = getByFlightKey(flightKey);
-        if (flights.size() > 0){
-            DateTimeComparator newFlightArrival = new DateTimeComparator(newFlight.getArrivalDate(),newFlight.getArrivalTime());
-            DateTimeComparator newFlightDeparture = new DateTimeComparator(newFlight.getDepartureDate(),newFlight.getDepartureTime());
-            for (FlightsEntity tempFlight : flights){
-                if (newFlightDeparture.compare(tempFlight.getDepartureDate(),tempFlight.getDepartureTime()) &&
-                        newFlightArrival.compare(tempFlight.getArrivalDate(),tempFlight.getArrivalTime())){
-                    present = true;
-                    break;
-                }
-            }
-        }
-        return present;
-    }
-
-    private List<FlightsEntity> getByFlightKey(FlightKey flightKey) throws SQLException{
+    private boolean isPlaneCompanyPresent(int planeCompanyId) throws SQLException{
         List<FlightsEntity> flights = flightsDAO.getAll();
         for (FlightsEntity tempFlight : new ArrayList<>(flights)){
-            if ((tempFlight.getCompanyId() != flightKey.companyId) ||
-                    (tempFlight.getDepartureTownId() != flightKey.departureTownId) ||
-                    (tempFlight.getArrivalTownId() != flightKey.arrivalTownId)){
+            if (tempFlight.getPlaneCompanyId() != planeCompanyId){
                 flights.remove(tempFlight);
             }
         }
-        return flights;
+        return !flights.isEmpty();
     }
 
     //Constraints

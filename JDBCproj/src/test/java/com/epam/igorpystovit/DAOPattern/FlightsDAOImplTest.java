@@ -20,13 +20,13 @@ import java.sql.SQLException;
 
 public class FlightsDAOImplTest {
     private final FlightsEntity testFlight = new FlightsEntity
-            (4,1,1,2,"20190619","110000","20190620","193000",1,3000);
+            (4,1,2,"20190619","110000","20190620","193000",1,3000);
     private final FlightsEntity updateTestFlight = new FlightsEntity
-            (4,1,1,3,"20191109","093000","20191109","110000",2,2900);
+            (4,1,3,"20191109","093000","20191109","110000",2,2900);
     private final FlightsEntity notOnTheTableFlight = new FlightsEntity
-            (101,1,1,1,"20191109","093000","20191109","110000",3,22900);
+            (101,1,1,"20191109","093000","20191109","110000",3,22900);
     private final FlightsEntity flightsEntity = new FlightsEntity
-            (5,1,2,3,"20191109","093000","20191109","110000",1,3000);
+            (5,2,3,"20191109","093000","20191109","110000",1,3000);
 
     private static PlanesService planesService = new PlanesService();
     private static CompaniesService companiesService = new CompaniesService();
@@ -47,9 +47,9 @@ public class FlightsDAOImplTest {
     public void create_test() throws SQLException, NoSuchDataException {
         FlightsDAOImpl flightsDAO = new FlightsDAOImpl();
         flightsDAO.create(flightsEntity);
-        int companyId = flightsDAO.getById(5).getCompanyId();
+//        int companyId = flightsDAO.getById(5).getCompanyId();
         double price = flightsDAO.getById(5).getPrice();
-        Assertions.assertEquals(1,companyId);
+//        Assertions.assertEquals(1,companyId);
         Assertions.assertEquals(3000,price);
     }
 

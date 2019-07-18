@@ -16,9 +16,9 @@ class OrdersDAOImplTest {
     private static FlightsService flightsService = new FlightsService();
 
     private static final FlightsEntity firstFlight = new FlightsEntity
-            (4,1,1,2,"20190619","110000","20190620","193000",1,3000);
+            (4,1,2,"20190619","110000","20190620","193000",1,3000);
     private static final FlightsEntity secondFlight = new FlightsEntity
-            (1,1,1,3,"20191109","093000","20191109","110000",2,2900);
+            (1,1,3,"20191109","093000","20191109","110000",2,2900);
 
     @BeforeAll
     public static void fillClientsFlightsTables() throws SQLException {

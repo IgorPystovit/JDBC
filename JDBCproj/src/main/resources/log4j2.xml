@@ -11,7 +11,7 @@
             <patternlayout pattern="${LOG_PATTERN}"/>
         </console>
 
-        <rollingfile name="errorLog" fileName="${APP_LOG_PATH}/errorLog.log" filePattern="${APP_LOG_PATH}/${FILE_PATTERN]">
+        <rollingfile name="errorLog" fileName="${APP_LOG_PATH}/errorLog.log" filePattern="${APP_LOG_PATH}/${FILE_PATTERN}">
             <patternlayout pattern="${LOG_PATTERN}"/>
             <levelrangefilter minLevel="WARN" maxLevel="FATAL" onMatch="DENY" onMismatch="ACCEPT"/>
             <policies>
@@ -19,7 +19,7 @@
             </policies>
         </rollingfile>
 
-        <rollingfile name="infoLog" fileName="${APP_LOG_PATH}/infoLog.log" filePattern="${APP_LOG_PATH}/${FILE_PATTERN]">
+        <rollingfile name="infoLog" fileName="${APP_LOG_PATH}/infoLog.log" filePattern="${APP_LOG_PATH}/${FILE_PATTERN}">
             <patternlayout pattern="${LOG_PATTERN}"/>
             <levelrangefilter minLevel="INFO" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
             <policies>

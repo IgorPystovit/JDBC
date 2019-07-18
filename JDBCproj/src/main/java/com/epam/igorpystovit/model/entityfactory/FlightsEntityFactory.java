@@ -8,8 +8,8 @@ public class FlightsEntityFactory extends EntityFactory<FlightsEntity,Integer> {
     protected FlightsEntity create(Integer id) {
 //        logger.info("Input flight id:");
 //        int id = Reader.readInt();
-        logger.info("Input company id , that provides the flight:");
-        int companyId = Reader.readInt();
+//        logger.info("Input company id , that provides the flight:");
+//        int companyId = Reader.readInt();
         logger.info("Input departure town id:");
         int departureTownId = Reader.readInt();
         logger.info("Input arrival town id:");
@@ -28,6 +28,6 @@ public class FlightsEntityFactory extends EntityFactory<FlightsEntity,Integer> {
         double price = Reader.readDouble();
 
         return new FlightsEntity
-                (id,companyId,departureTownId,arrivalTownId,departureDate,departureTime,arrivalDate,arrivalTime,planeCompanyId,price);
+                (id,departureTownId,arrivalTownId,departureDate,departureTime,arrivalDate,arrivalTime,planeCompanyId,price);
     }
 }

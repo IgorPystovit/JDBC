@@ -14,7 +14,6 @@ import java.util.List;
 public class CompaniesService implements CompaniesDAO,Service<CompaniesEntity,Integer> {
     private static final CompaniesDAOImpl companiesDAO = new CompaniesDAOImpl();
     private static final PlanesCompaniesService planesCompaniesService = new PlanesCompaniesService();
-    private static final FlightsService flightsService = new FlightsService();
 
     @Override
     public List<CompaniesEntity> getAll() throws SQLException {
@@ -49,13 +48,9 @@ public class CompaniesService implements CompaniesDAO,Service<CompaniesEntity,In
     @Override
     public void delete(Integer id) throws SQLException, NoSuchDataException {
         List<PlanesCompaniesEntity> planesCompaniesEntitiesOnTheTable = getPlanesCompaniesEntitiesByCompanyId(id);
-        List<FlightsEntity> flightsEntitiesOnTheTable = getFlightsEntitiesByCompanyId(id);
 
         for (PlanesCompaniesEntity tempEntity : planesCompaniesEntitiesOnTheTable){
             planesCompaniesService.delete(tempEntity.getId());
-        }
-        for (FlightsEntity flightsEntity : flightsEntitiesOnTheTable){
-            flightsService.delete(flightsEntity.getId());
         }
         companiesDAO.delete(id);
     }
@@ -76,13 +71,4 @@ public class CompaniesService implements CompaniesDAO,Service<CompaniesEntity,In
         return planesCompaniesEntities;
     }
 
-    private List<FlightsEntity> getFlightsEntitiesByCompanyId(Integer companyId) throws SQLException{
-        List<FlightsEntity> flightsEntities = flightsService.getAll();
-        for (FlightsEntity tempEntity : new ArrayList<>(flightsEntities)){
-            if (tempEntity.getCompanyId() != companyId){
-                flightsEntities.remove(tempEntity);
-            }
-        }
-        return flightsEntities;
-    }
 }

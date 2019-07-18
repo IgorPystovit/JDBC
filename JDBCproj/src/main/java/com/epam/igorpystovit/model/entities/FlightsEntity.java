@@ -13,8 +13,6 @@ public class FlightsEntity {
     @PrimaryKey
     @Column(name = "id",length = 200)
     private int id;
-    @Column(name = "company_id",length = 200)
-    private int companyId;
     @Column(name = "departure_town_id",length = 200)
     private int departureTownId;
     @Column(name = "arrival_town_id",length = 200)
@@ -35,10 +33,9 @@ public class FlightsEntity {
     private DateTimeParser dateTimeParser = new DateTimeParser();
 
     public FlightsEntity(){}
-    public FlightsEntity(int id, int companyId, int departureTownId, int arrivalTownId,
+    public FlightsEntity(int id, int departureTownId, int arrivalTownId,
                          String departureDate, String departureTime, String arrivalDate, String arrivalTime, int planeCompanyId, double price){
         this.id = id;
-        this.companyId = companyId;
         this.departureTownId = departureTownId;
         this.arrivalTownId = arrivalTownId;
         this.departureDate = dateTimeParser.dateParser(departureDate);
@@ -55,14 +52,6 @@ public class FlightsEntity {
 
     public int getId() {
         return id;
-    }
-
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
-    }
-
-    public int getCompanyId() {
-        return companyId;
     }
 
     public void setDepartureTownId(int departureTownId) {
@@ -133,7 +122,7 @@ public class FlightsEntity {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("id = "+id+"\t"+" Company id = "+companyId+"\t"+" Departure town id = "+departureTownId+"\t"+
+        sb.append("id = "+id+"\t"+" Departure town id = "+departureTownId+"\t"+
                 " Arrival town id = "+arrivalTownId+"\t"+" Departure date = "+departureDate+"\t"+" Departure time = "+departureTime+"\t"+
                 " Arrival date = "+arrivalDate+"\t"+" Arrival time = "+arrivalTime+"\t"+" Plane id = "+ planeCompanyId +"\t"+" Price = "+price);
         return sb.toString();
