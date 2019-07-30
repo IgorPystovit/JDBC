@@ -30,8 +30,14 @@ public class ClientsDAOImpl implements ClientsDAO {
         List<ClientsEntity> clients = new ArrayList<>();
         Statement selectStatement = DBCONNECTION.createStatement();
         ResultSet selectResult = selectStatement.executeQuery(SELECT);
-        while (selectResult.next()){
-            clients.add((ClientsEntity)transformer.transformFromResultSet(selectResult));
+        try{
+            while (selectResult.next()){
+                clients.add((ClientsEntity)transformer.transformFromResultSet(selectResult));
+            }
+        }
+        finally {
+            selectStatement.close();
+            selectResult.close();
         }
         return clients;
     }
@@ -58,11 +64,16 @@ public class ClientsDAOImpl implements ClientsDAO {
             logger.error("You are trying to insert duplicate key");
         } catch (NoSuchDataException e){
             PreparedStatement createStatement = DBCONNECTION.prepareStatement(INSERT);
-            createStatement.setInt(1,clientsEntity.getId());
-            createStatement.setString(2,clientsEntity.getName());
-            createStatement.setString(3,clientsEntity.getSurname());
-            createStatement.setDouble(4,clientsEntity.getCash());
-            createStatement.execute();
+            try{
+                createStatement.setInt(1,clientsEntity.getId());
+                createStatement.setString(2,clientsEntity.getName());
+                createStatement.setString(3,clientsEntity.getSurname());
+                createStatement.setDouble(4,clientsEntity.getCash());
+                createStatement.execute();
+            }
+            finally {
+                createStatement.close();
+            }
         }
     }
 

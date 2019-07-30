@@ -1,0 +1,1 @@
+; 2javaXShrRsrc/main/java/com/epam/igorpystovit/DAOPattern/daoimplementations/MetaDataDAO.java

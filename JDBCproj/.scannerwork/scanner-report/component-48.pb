@@ -1,0 +1,1 @@
+0 2javaXZhr5src/main/java/com/epam/igorpystovit/model/Reader.java

@@ -1,0 +1,1 @@
+F 2javaXhrKsrc/main/java/com/epam/igorpystovit/DAOPattern/daointerface/GeneralDAO.java

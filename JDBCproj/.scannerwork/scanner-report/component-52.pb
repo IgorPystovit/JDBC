@@ -1,0 +1,1 @@
+4 2javaX,hrCsrc/main/java/com/epam/igorpystovit/model/entities/TownsEntity.java

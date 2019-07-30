@@ -1,0 +1,1 @@
+G 2javaXhrKsrc/main/java/com/epam/igorpystovit/DAOPattern/daointerface/ClientsDAO.java

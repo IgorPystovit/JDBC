@@ -1,0 +1,6 @@
+projectKey=JDBC
+serverUrl=http://localhost:9093
+serverVersion=7.9.1.27448
+dashboardUrl=http://localhost:9093/dashboard?id=JDBC
+ceTaskId=AWw6co9ZboOisS_PG166
+ceTaskUrl=http://localhost:9093/api/ce/task?id=AWw6co9ZboOisS_PG166

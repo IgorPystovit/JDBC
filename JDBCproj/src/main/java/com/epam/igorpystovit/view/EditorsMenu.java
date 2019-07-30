@@ -21,25 +21,23 @@ public class EditorsMenu<T> implements Menu {
 
     @Override
     public Map<Integer, String> getMenuItems() {
-        Map<Integer, String> menuItems = new LinkedHashMap<>() {{
-            put(1, "To add new row");
-            put(2, "To delete the row");
-            put(3, "To read row by id");
-            put(4, "To read all rows");
-            put(5, "To update row");
-        }};
+        Map<Integer, String> menuItems = new LinkedHashMap<>();
+        menuItems.put(1, "To add new row");
+        menuItems.put(2, "To delete the row");;
+        menuItems.put(3, "To read row by id");
+        menuItems.put(4, "To read all rows");
+        menuItems.put(5, "To update row");
         return menuItems;
     }
 
     @Override
     public Map<Integer, Runnable> getMenuActions() {
-        Map<Integer, Runnable> menuActions = new LinkedHashMap<>() {{
-            put(1, () -> tableEditor.edit(tableType, ModificationType.CREATE));
-            put(2, () -> tableEditor.edit(tableType, ModificationType.DELETE));
-            put(3, () -> tableEditor.edit(tableType, ModificationType.READ));
-            put(4, () -> tableEditor.edit(tableType, ModificationType.READ_ALL));
-            put(5, () -> tableEditor.edit(tableType, ModificationType.UPDATE));
-        }};
+        Map<Integer, Runnable> menuActions = new LinkedHashMap<>();
+        menuActions.put(1, () -> tableEditor.edit(tableType, ModificationType.CREATE));
+        menuActions.put(2, () -> tableEditor.edit(tableType, ModificationType.DELETE));
+        menuActions.put(3, () -> tableEditor.edit(tableType, ModificationType.READ));
+        menuActions.put(4, () -> tableEditor.edit(tableType, ModificationType.READ_ALL));
+        menuActions.put(5, () -> tableEditor.edit(tableType, ModificationType.UPDATE));
         return menuActions;
     }
 

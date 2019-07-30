@@ -1,0 +1,1 @@
+6 2javaX,hrGsrc/main/java/com/epam/igorpystovit/model/entities/CompaniesEntity.java

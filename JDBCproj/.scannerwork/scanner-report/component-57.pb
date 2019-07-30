@@ -1,0 +1,1 @@
+9 2javaX#hrRsrc/main/java/com/epam/igorpystovit/model/connectionmanager/ConnectionManager.java
